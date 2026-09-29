@@ -1,0 +1,27 @@
+# dependencies
+/node_modules
+
+# next.js
+/.next/
+/.next-fixture/
+/out/
+next-env.d.ts
+*.tsbuildinfo
+
+# testing
+/coverage
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/.lighthouseci/
+
+# env files
+.env*
+
+# debug
+npm-debug.log*
+
+# os / editor
+.DS_Store
+Thumbs.db

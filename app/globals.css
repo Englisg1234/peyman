@@ -1,0 +1,2352 @@
+@import "tailwindcss";
+/* Site system (sections, interior pages, footer, forms). */
+@import "./site.css";
+
+/*
+ * Design tokens (design.md: Color and token system; Spacing, containers,
+ * sizing, layers). Tailwind v4 CSS-first theme is the single source for
+ * colors (Req 4.1). Default namespaces that could leak off-palette or
+ * off-system values are cleared (Req 4.9).
+ */
+
+/* Palette: 9 tokens only. `static` always emits the variables so inline
+   styles and runtime code can read them even when no utility uses them. */
+@theme static {
+  --color-*: initial;
+  --color-ink-950: #05070c;
+  --color-navy-950: #040e23;
+  --color-navy-900: #0a1a36;
+  --color-navy-800: #071e46;
+  --color-gold-500: #c59655;
+  --color-gold-300: #d6ae72;
+  --color-gold-100: #f6e7c4;
+  --color-ivory-50: #f4efe4;
+  --color-ivory-300: #b8b2a5;
+}
+
+@theme {
+  /* No radii, no shadows of any kind (design: "Shadows: None", radius 0). */
+  --radius-*: initial;
+  --shadow-*: initial;
+  --inset-shadow-*: initial;
+  --drop-shadow-*: initial;
+  --text-shadow-*: initial;
+
+  /* Breakpoints: md 768 / lg 1024 / xl 1280 / 3xl 1920 (design Layout table). */
+  --breakpoint-*: initial;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+  --breakpoint-3xl: 120rem;
+
+  /* Content caps: wide 1360 (1280–1919), ultra 1680 (≥ 1920). */
+  --container-content-wide: 85rem;
+  --container-content-ultra: 105rem;
+}
+
+/* Font families (design: Typography system, D1). next/font sets
+   --font-inter and --font-source-code-pro on <html>; `inline` makes the
+   utilities and preflight resolve through them. */
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-source-code-pro);
+}
+
+/*
+ * Display-tuned fallback for the h1 only (Req 16.3). next/font's generic
+ * "Inter Fallback" is tuned to the text cut (opsz 14, size-adjust 107.12%),
+ * but the headline renders the Display cut (opsz 32), which is about 8%
+ * narrower. Measured from advance widths (upm 2048, no kerning) of the
+ * headline "Bridging the Gap Between Innovation and Institutional Capital.":
+ *   Inter Display 4.1 (static opsz 32 instance)  26.808 em
+ *   Inter 4.1 text cut (opsz 14)                 29.176 em  (r = 0.919)
+ *   Arial (Windows arial.ttf)                    27.518 em
+ *   size-adjust     = 26.808 / 27.518          = 97.42%
+ *   ascent-override = 0.96875 (1984/2048) / 0.9742 = 99.44%
+ *   descent-override = 0.24121 (494/2048) / 0.9742 = 24.76%
+ * Per-line ratios range 0.963–0.982, so the line count matches across the
+ * swap within the measure caps (verified in Playwright, task 12.2).
+ */
+@font-face {
+  font-family: "Inter Display Fallback";
+  src: local("Arial"), local("ArialMT");
+  size-adjust: 97.42%;
+  ascent-override: 99.44%;
+  descent-override: 24.76%;
+  line-gap-override: 0%;
+}
+
+/*
+ * Type roles (design: Typography system table). Sizes are in rem so they
+ * follow the user's root size; values equal the design's px at 16 px root.
+ * No role sets text-transform except meta (Req 6.5, 6.6).
+ */
+
+/* Display (Headline): 36–68 px up to 1919, 84 px from 1920 (D2).
+   font-optical-sizing: auto resolves to opsz 32 at every headline size.
+   Container measure caps are added with the band layouts (task 12.1). */
+@utility type-display {
+  font-family: var(--font-display-stack, var(--font-inter));
+  font-optical-sizing: auto;
+  font-size: clamp(2.25rem, 0.29rem + 4.13vw, 4.25rem);
+  font-weight: 400;
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+  hyphens: none;
+
+  /* lg (64rem) */
+  @media (min-width: 64rem) {
+    max-inline-size: 20ch;
+  }
+
+  /* 3xl (120rem) */
+  @media (min-width: 120rem) {
+    font-size: 5.25rem;
+  }
+}
+
+/* Mobile_Menu items: display role at 28–32 px (Req 8.11). */
+@utility type-menu {
+  font-family: var(--font-sans);
+  font-optical-sizing: auto;
+  font-size: clamp(1.75rem, 1.5rem + 1vw, 2rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+
+/* Heading (future h2): 24–36 px. */
+@utility type-heading {
+  font-family: var(--font-sans);
+  font-optical-sizing: auto;
+  font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.25rem);
+  font-weight: 450;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+/* Body (Supporting_Copy): 16–20 px, never below 16 px (Req 6.4, 6.7). */
+@utility type-body {
+  font-family: var(--font-sans);
+  font-optical-sizing: auto;
+  font-size: clamp(1rem, 0.95rem + 0.3vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: 0;
+  max-inline-size: 46ch;
+  text-wrap: pretty;
+}
+
+/* CTA / nav labels: 15 px below 1024, 16 px from 1024. */
+@utility type-cta {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+
+  @media (min-width: 64rem) {
+    font-size: 1rem;
+  }
+}
+
+/* Wordmark (D5): authored uppercase, never transformed.
+   12 px / 0.16em below 360, 13 px / 0.16em to 1023, 14 px / 0.18em from 1024. */
+@utility type-wordmark {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.16em;
+
+  @media (min-width: 22.5rem) {
+    font-size: 0.8125rem;
+  }
+
+  @media (min-width: 64rem) {
+    font-size: 0.875rem;
+    letter-spacing: 0.18em;
+  }
+}
+
+/* Meta / eyebrow: mono, uppercase, 12 px below 1024, 13 px from 1024.
+   The IPA segment keeps its sourced lowercase (Req 6.6). */
+@utility type-meta {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  @media (min-width: 64rem) {
+    font-size: 0.8125rem;
+  }
+
+  & [lang="fa-fonipa"] {
+    text-transform: none;
+  }
+}
+
+/* Landscape phone band: w > h, h < 480, w ≤ 1023. */
+@custom-variant landscape-short {
+  @media (orientation: landscape) and (max-height: 479.98px) and (max-width: 1023.98px) {
+    @slot;
+  }
+}
+
+/* Compact mobile portrait band: h < 720, w ≤ 767 (Req 10.3). */
+@custom-variant compact {
+  @media (orientation: portrait) and (max-height: 719.98px) and (max-width: 767.98px) {
+    @slot;
+  }
+}
+
+/* Fine pointer with hover (parallax, hover-only styling gates). */
+@custom-variant fine {
+  @media (hover: hover) and (pointer: fine) {
+    @slot;
+  }
+}
+
+/* Touch press feedback mirroring hover (Req 10.8). v4 `hover:` only
+   applies under (hover: hover), so touch needs its own variant. */
+@custom-variant pressed {
+  @media (hover: none) {
+    &:active {
+      @slot;
+    }
+  }
+}
+
+@layer base {
+  :root {
+    /* z-index scale (Req 7.12): content 0–10, header 50, menu backdrop 60,
+       menu panel 70, skip link 100. Use as `z-(--z-header)`. */
+    --z-content: 0;
+    --z-content-max: 10;
+    --z-header: 50;
+    --z-backdrop: 60;
+    --z-panel: 70;
+    --z-skip: 100;
+
+    /* Site_Header height per band, excluding env(safe-area-inset-top),
+       which consumers add. 64 px below 1024, 72 px at 1024 and above,
+       56 px in the landscape-short band (design Header system). */
+    --header-h: 64px;
+  }
+
+  @media (min-width: 64rem) {
+    :root {
+      --header-h: 72px;
+    }
+  }
+
+  /* landscape-short is limited to w ≤ 1023, so it never overlaps the 72 px band. */
+  @media (orientation: landscape) and (max-height: 479.98px) and (max-width: 1023.98px) {
+    :root {
+      --header-h: 56px;
+    }
+  }
+
+  html {
+    background-color: var(--color-ink-950);
+    color: var(--color-ivory-50);
+    /* Light text on a dark stage: grayscale smoothing keeps Inter's thin
+       Display strokes from bolding on macOS. */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Focused or anchored content lands below the fixed header (Req 12.3). */
+    scroll-padding-top: calc(var(--header-h) + env(safe-area-inset-top) + 8px);
+  }
+
+  /* Focus indicator: 2 px ivory-50, 3 px offset. Never gold (Req 12.3, 4.2).
+     :focus-visible means no ring on pointer click alone. */
+  :focus-visible {
+    outline: 2px solid var(--color-ivory-50);
+    outline-offset: 3px;
+  }
+}
+
+/*
+ * CTA primitive (components/ui/button-link.tsx; design: CTA system).
+ * Req 1.7, 3.3, 4.2, 9.1, 10.8, 10.9, 12.3, 12.7, 12.8.
+ *
+ * Each button is its own stacking context; the ::before overlay sits between
+ * the button's background and its label (z-index -1 inside `isolation`).
+ * Hover and press only fade that overlay's opacity. No color, border color or
+ * background is ever transitioned (Req 9.1).
+ *
+ * Every button carries a 1 px border (transparent unless the variant paints
+ * it), so the box is the same size in every state and in forced colors.
+ * Heights are minimums: WCAG 1.4.12 text-spacing overrides grow the button
+ * instead of clipping the label (Req 12.7).
+ *
+ * Label alignment: `--btn-align` (start | center, default center) drives both
+ * `justify-content` and `text-align`. Set it with the `align` prop, or on a
+ * parent (for example responsively in `.cta-group`); it is never declared on
+ * `.btn` itself, so an inherited value wins.
+ */
+@layer components {
+  .btn {
+    position: relative;
+    isolation: isolate;
+    display: inline-flex;
+    align-items: center;
+    justify-content: var(--btn-align, center);
+    text-align: var(--btn-align, center);
+    box-sizing: border-box;
+    min-block-size: 48px;
+    min-inline-size: 44px;
+    max-inline-size: 100%;
+    padding-block: 0.75rem;
+    padding-inline: 20px;
+    border: 1px solid transparent;
+    border-radius: 0;
+    text-decoration: none;
+    text-transform: none;
+    overflow-wrap: break-word;
+    -webkit-tap-highlight-color: transparent;
+
+    @media (min-width: 48rem) {
+      padding-inline: 28px;
+    }
+
+    @media (min-width: 64rem) {
+      min-block-size: 52px;
+    }
+  }
+
+  .btn[data-align="start"] {
+    --btn-align: start;
+  }
+
+  .btn[data-align="center"] {
+    --btn-align: center;
+  }
+
+  /* Overlay layer: the only thing that changes on hover or press. */
+  .btn::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    /* Absolute insets resolve against the padding box; -1px covers the border. */
+    inset: -1px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--dur-micro) var(--ease-state);
+  }
+
+  /* Primary: gold-500 fill, ink-950 label; gold-300 overlay on hover/press. */
+  .btn-primary {
+    background-color: var(--color-gold-500);
+    color: var(--color-ink-950);
+  }
+
+  .btn-primary::before {
+    background-color: var(--color-gold-300);
+  }
+
+  /* Secondary: transparent, ivory-50 label, ivory-50 at 44% border
+     (3.87–3.93:1 on the Hero surfaces); the overlay is a gold-500 border
+     laid exactly over it, so only the hairline turns gold (Req 4.2). */
+  .btn-secondary,
+  .btn-quiet {
+    background-color: transparent;
+    color: var(--color-ivory-50);
+    border-color: color-mix(in srgb, var(--color-ivory-50) 44%, transparent);
+  }
+
+  .btn-secondary::before,
+  .btn-quiet::before {
+    border: 1px solid var(--color-gold-500);
+  }
+
+  /* Quiet (header CTA): secondary treatment at a 44 px minimum, 20 px inline
+     padding in every band. Declared after `.btn`, so it overrides the
+     band-specific 52 px height and 28 px padding at equal specificity. */
+  .btn-quiet {
+    min-block-size: 44px;
+    padding-block: 0.625rem;
+    padding-inline: 20px;
+  }
+
+  /* Hover only where the primary input can hover (matches Tailwind v4 `hover:`). */
+  @media (hover: hover) {
+    .btn:hover::before {
+      opacity: 1;
+    }
+  }
+
+  /* Touch press mirrors hover (Req 10.8). The overlay appears on contact,
+     since a tap is often shorter than --dur-micro, and fades out on release. */
+  @media (hover: none) {
+    .btn:active::before {
+      opacity: 1;
+      transition-duration: 0ms;
+    }
+  }
+
+  /* Forced colors (Req 12.8): system-color border, no overlay, Highlight focus. */
+  @media (forced-colors: active) {
+    .btn {
+      border-color: ButtonText;
+    }
+
+    .btn::before {
+      display: none;
+    }
+
+    .btn:focus-visible {
+      outline: 2px solid Highlight;
+      outline-offset: 3px;
+    }
+  }
+}
+
+/*
+ * Brand_Mark (components/layout/brand-mark.tsx; design: Header system).
+ * Req 4.4, 4.5, 4.6, 7.11, 17.2.
+ *
+ * Lockup: emblem thumbnail, 12 px gap, wordmark. The link is at least 44 px
+ * tall (target size) and never wraps.
+ *
+ * Optical alignment: the flex row centers the wordmark's box on the
+ * thumbnail. Inter at line-height 1 puts the cap-height midline at 0.50em
+ * (ascent 0.969, descent 0.241, cap 0.727), so the caps sit on the emblem's
+ * vertical center. `text-box: trim-both cap alphabetic` makes this exact
+ * wherever supported, fallback font included. The negative inline-end
+ * margin removes the trailing letter-spacing after the final "G", so the
+ * lockup ends on the glyph, not on dead tracking space.
+ *
+ * Thumbnail: a fixed box (28 px tall, 32 px from 1024; width from the
+ * Site_Config aspect ratio, about 24.5 / 28 px). It holds its size if the
+ * image fails (Req 17.2). The image scales uniformly to fill it, with no
+ * filter, mask, blend or overlay (Req 4.4); `color: transparent` suppresses
+ * alt text, and a failure-only `::after` cover hides the broken-image icon.
+ */
+@layer components {
+  .brand-mark {
+    display: inline-flex;
+    flex: none;
+    align-items: center;
+    gap: 12px;
+    min-block-size: 44px;
+    color: var(--color-ivory-50);
+    text-decoration: none;
+    white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .brand-mark__thumb {
+    display: block;
+    flex: none;
+    block-size: 28px;
+    aspect-ratio: var(--brand-thumb-ratio);
+
+    @media (min-width: 64rem) {
+      block-size: 32px;
+    }
+  }
+
+  .brand-mark__img {
+    position: relative;
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: contain;
+    color: transparent;
+    user-select: none;
+  }
+
+  /* Failure cover (Req 17.2). Chromium draws a broken-image icon in a sized
+     <img> even with alt="", and neither `color: transparent` nor clipping
+     removes it. Pseudo-elements on <img> render only when the image has
+     failed, so this cover never sits over a loaded emblem (Req 4.4 holds).
+     It paints the surface behind the header; the Site_Header may set
+     `--brand-thumb-surface` to track its scrolled state (default navy-950,
+     the top of the hero stage). */
+  .brand-mark__img::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--brand-thumb-surface, var(--color-navy-950));
+  }
+
+  .brand-mark__wordmark {
+    display: block;
+    color: var(--color-ivory-50);
+    text-box: trim-both cap alphabetic;
+    margin-inline-end: -0.16em;
+
+    @media (min-width: 64rem) {
+      margin-inline-end: -0.18em;
+    }
+  }
+
+  /* Supplied wordmark asset (Req 4.6): fixed-height box, width from ratio. */
+  .brand-mark__wordmark-asset {
+    display: block;
+    flex: none;
+    block-size: 16px;
+    aspect-ratio: var(--brand-wordmark-ratio);
+
+    @media (min-width: 64rem) {
+      block-size: 18px;
+    }
+  }
+}
+
+/*
+ * Hero CTA group (components/hero/hero-actions.tsx; design: CTA system).
+ * Req 1.8, 3.4, 10.5, 11.6, 11.8. Mirrors `layoutCtas()` in lib/layout-model.ts.
+ *
+ * Below 768: a column; each button stretches to the full text-block width,
+ * 12 px apart, labels start-aligned so they echo the column edge.
+ * From 768: one row with a 16 px column gap. Buttons keep their natural
+ * width (capped at 100% by `.btn`) and never shrink; if both do not fit
+ * (for example under WCAG 1.4.12 text spacing) the Secondary wraps to a
+ * second row 12 px below. Row items stretch to the line height.
+ *
+ * The group is always operable (Req 1.8): no `pointer-events`, `inert`,
+ * `visibility` or `aria-hidden` here or on any ancestor. `:focus-within`
+ * cancels the intro animation (task 15.1) so a focused CTA is never
+ * mid-fade.
+ */
+@layer components {
+  .cta-group {
+    --btn-align: start;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+
+    @media (min-width: 48rem) {
+      --btn-align: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+      column-gap: 16px;
+      row-gap: 12px;
+    }
+  }
+
+  .cta-group > .btn {
+    flex: none;
+  }
+}
+
+/* Unlayered on purpose: it must beat the intro animation (task 15.1) wherever
+   that is declared, layered or not (specificity 0,2,0). */
+.cta-group:focus-within {
+  animation: none;
+}
+
+/*
+ * Site_Header (components/layout/site-header.tsx; design: Header system).
+ * Req 7.1–7.4, 7.6, 7.7, 7.12, 7.14, 7.15, 10.11, 12.3, 12.4.
+ *
+ * Inline gutters mirror `gutters()` in lib/layout-model.ts, so the Brand_Mark
+ * and the header CTA sit on the Hero content box edges: 20 px below 768 and
+ * in the landscape-short band, `clamp(40px, 4vw, 80px)` from 768, each at
+ * least the safe-area inset. `--gutter-base` is shared with the Hero (12.1).
+ */
+@layer base {
+  :root {
+    --gutter-base: 20px;
+  }
+
+  @media (min-width: 48rem) {
+    :root {
+      --gutter-base: clamp(40px, 4vw, 80px);
+    }
+  }
+
+  @media (orientation: landscape) and (max-height: 479.98px) and (max-width: 1023.98px) {
+    :root {
+      --gutter-base: 20px;
+    }
+  }
+
+  /* The skip-link target (tabindex -1) takes focus programmatically only.
+     A ring around the whole page carries no information, so none is drawn;
+     the next Tab lands on the first control inside main, which has one. */
+  main[tabindex="-1"]:focus {
+    outline: none;
+  }
+}
+
+@layer components {
+  /*
+   * Fixed shell. The height is constant across scroll states (Req 7.2):
+   * `--header-h` (64 / 72 / 56 px) plus the top safe area, which is padding,
+   * so the content row keeps the full band height on notched devices.
+   */
+  .site-header {
+    --brand-thumb-surface: var(--color-navy-950);
+    position: fixed;
+    inset-block-start: 0;
+    inset-inline: 0;
+    /* Keeps the header's width while the Mobile_Menu scroll lock removes a
+       classic scrollbar (lib/scroll-lock.ts; Req 8.5). 0 otherwise. */
+    inset-inline-end: var(--scroll-lock-gap, 0px);
+    z-index: var(--z-header);
+    box-sizing: border-box;
+    block-size: calc(var(--header-h) + env(safe-area-inset-top));
+    padding-block-start: env(safe-area-inset-top);
+    padding-inline-start: max(var(--gutter-base), env(safe-area-inset-left));
+    padding-inline-end: max(var(--gutter-base), env(safe-area-inset-right));
+  }
+
+  /*
+   * Scrolled-state surface (Req 7.3, 7.4). A separate layer: only its opacity
+   * changes, over --dur-ui. At rest (top state) it is fully transparent and
+   * carries no blur, so neither the fill nor the gold hairline shows.
+   * The blur is applied only in the scrolled state: it switches on at once
+   * when the layer fades in, and is held for --dur-ui when it fades out, so
+   * it never pops while visible. The header must not gain opacity < 1, a
+   * filter or a mask, which would become the backdrop root and blank the blur.
+   */
+  .site-header__surface {
+    position: absolute;
+    inset: 0;
+    box-sizing: border-box;
+    background-color: color-mix(in srgb, var(--color-ink-950) 94%, transparent);
+    border-block-end: 1px solid color-mix(in srgb, var(--color-gold-500) 24%, transparent);
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      opacity var(--dur-ui) var(--ease-state),
+      backdrop-filter 0s linear var(--dur-ui),
+      -webkit-backdrop-filter 0s linear var(--dur-ui);
+  }
+
+  .site-header[data-scrolled="true"] {
+    --brand-thumb-surface: var(--color-ink-950);
+  }
+
+  .site-header[data-scrolled="true"] .site-header__surface {
+    opacity: 1;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    transition: opacity var(--dur-ui) var(--ease-state);
+  }
+
+  /* No backdrop-filter support: a denser solid fill, no blur (Req 17.10). */
+  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .site-header__surface {
+      background-color: color-mix(in srgb, var(--color-ink-950) 96%, transparent);
+    }
+  }
+
+  /*
+   * Three zones on one row: brand · inline nav (task 8.1, ≥ 1280) · actions.
+   * The middle track absorbs the free space; with no Nav_Items (DEC-01) it is
+   * simply empty, so the brand holds the start edge and the actions the end
+   * edge. From 1280 the row is capped to the Hero content box (1360 / 1680).
+   */
+  .site-header__inner {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    column-gap: 24px;
+    block-size: 100%;
+    margin-inline: auto;
+
+    @media (min-width: 80rem) {
+      max-inline-size: var(--container-content-wide, 85rem);
+    }
+
+    @media (min-width: 120rem) {
+      max-inline-size: var(--container-content-ultra, 105rem);
+    }
+  }
+
+  .site-header__brand {
+    grid-column: 1;
+    display: flex;
+    min-inline-size: 0;
+  }
+
+  .site-header__actions {
+    grid-column: 3;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+  }
+
+  /* Header CTA: shown from 768 (Req 7.6); below 768 `display: none` removes
+     it from display, focus order and the accessibility tree (Req 7.7). */
+  .site-header__cta {
+    display: none;
+
+    @media (min-width: 48rem) {
+      display: inline-flex;
+    }
+  }
+
+  /*
+   * Skip link (Req 7.14, 7.15, 12.4). First focusable element. Visually
+   * hidden (clipped to 1 px, never display: none or visibility: hidden) so it
+   * stays in the accessibility tree. On focus it appears at the start gutter,
+   * vertically centered in the header row, at z 100 above every other layer.
+   */
+  .skip-link {
+    position: absolute;
+    z-index: var(--z-skip);
+    inset-block-start: calc(env(safe-area-inset-top) + (var(--header-h) - 44px) / 2);
+    inset-inline-start: max(var(--gutter-base), env(safe-area-inset-left));
+    display: inline-flex;
+    align-items: center;
+    box-sizing: border-box;
+    min-block-size: 44px;
+    padding-block: 0.625rem;
+    padding-inline: 20px;
+    background-color: var(--color-navy-950);
+    color: var(--color-ivory-50);
+    border: 1px solid color-mix(in srgb, var(--color-ivory-50) 44%, transparent);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .skip-link:not(:focus) {
+    inline-size: 1px;
+    block-size: 1px;
+    min-block-size: 0;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+
+  @media (forced-colors: active) {
+    .skip-link {
+      border-color: ButtonText;
+    }
+
+    .skip-link:focus-visible {
+      outline: 2px solid Highlight;
+      outline-offset: 3px;
+    }
+  }
+}
+
+/*
+ * Hero shell and text block (components/hero/hero.tsx, hero-copy.tsx;
+ * design: Hero composition, Layout architecture, Headline line breaks).
+ * Req 1.1, 3.1, 6.2, 6.4, 6.9, 10.1, 10.6, 16.1, 16.3.
+ *
+ * Mobile-first base only (the tall mobile band of `computeHeroLayout()`):
+ * a 4-column grid with a 16 px gap, the Emblem_Stage slot stacked above the
+ * text and end-aligned, and the tall mobile rhythm (24 / 32 / 20 / 28 / 24).
+ * The band layouts from 768 px and landscape ("Hero band layouts" below,
+ * task 12.1), the compact band and viewport metadata (task 13.1), framing
+ * and atmosphere (task 11.x) and the intro keyframes (task 15.1) layer on
+ * top of these hooks.
+ *
+ * The headline is never hidden: no opacity, visibility, clip-path or mask
+ * here (K5). It paints final at first paint with or without JS.
+ */
+@layer components {
+  .hero {
+    /* Rhythm tokens (lib/layout-model.ts MOBILE_RHYTHM, tall band). */
+    --hero-pad-top: 24px;
+    --hero-gap-emblem: 32px;
+    --hero-gap-copy: 20px;
+    --hero-gap-cta: 28px;
+    --hero-pad-bottom: 24px;
+    /* One small-viewport unit for custom-property math (Req 17.8). A second
+       declaration cannot act as a fallback inside a custom property, because
+       custom properties are not validated at parse time: `70svh` in an
+       unsupporting browser would make every `var()` consumer invalid at
+       computed-value time. So the unit is `1vh` and upgraded by a feature
+       query (below). Plain properties keep the two-declaration cascade. */
+    --hero-svh: 1vh;
+
+    position: relative;
+    isolation: isolate;
+    overflow: clip;
+    overflow-clip-margin: 8px;
+    box-sizing: border-box;
+    /* Grows with its content (Req 10.6); svh keeps iOS toolbars out of the fold.
+       The svh upgrade lives in the feature query below: the build's minifier
+       drops a same-property `100vh` fallback declaration when every browser
+       in the build targets supports svh, which would leave older iOS with no
+       fold height (Req 17.8). */
+    min-block-size: 100vh;
+    /* The Site_Header is fixed, so the Hero starts under it (y = 0). */
+    padding-block-start: calc(var(--header-h) + env(safe-area-inset-top) + var(--hero-pad-top));
+    padding-block-end: calc(var(--hero-pad-bottom) + env(safe-area-inset-bottom));
+    padding-inline-start: max(var(--gutter-base), env(safe-area-inset-left));
+    padding-inline-end: max(var(--gutter-base), env(safe-area-inset-right));
+    /* Stage: one 2-stop gradient, full-bleed at every width (Req 2.1, 2.2). */
+    background-image: linear-gradient(to bottom, var(--color-navy-950), var(--color-ink-950));
+    color: var(--color-ivory-50);
+  }
+
+  @supports (height: 1svh) {
+    .hero {
+      --hero-svh: 1svh;
+      min-block-size: 100svh;
+    }
+  }
+
+  .hero__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: 16px;
+    align-items: start;
+  }
+
+  /* Text block: columns 1–4; the headline's inline-size container. */
+  .hero__text {
+    grid-column: 1 / -1;
+  }
+
+  .hero-text {
+    container-type: inline-size;
+    container-name: hero-text;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: start;
+  }
+
+  /*
+   * Emblem_Stage slot. Last in the DOM, first visually (`order`), end-aligned
+   * (Req 3.1, 10.1). Height `clamp(120px, 22svh, 200px)` (Req 10.2); width
+   * from the emblem aspect ratio, never wider than the content box.
+   * The slot is the EmblemStage root (`.emblem-stage`, styled below).
+   */
+  .hero__stage {
+    grid-column: 1 / -1;
+    order: -1;
+    justify-self: end;
+    /* vh base; svh upgrade in the feature query below (Req 17.8: the
+       minifier drops a same-property vh fallback declaration). */
+    block-size: clamp(120px, 22vh, 200px);
+    aspect-ratio: var(--emblem-aspect, 1003 / 1144);
+    max-inline-size: 100%;
+    margin-block-end: var(--hero-gap-emblem);
+  }
+
+  /* Before the compact and side-by-side band rules, so they still win. */
+  @supports (height: 1svh) {
+    .hero__stage {
+      block-size: clamp(120px, 22svh, 200px);
+    }
+  }
+
+  /*
+   * Compact mobile portrait (the `compact` variant: portrait, h < 720,
+   * w < 768; Req 10.3; `mobile-compact` in computeHeroLayout()). This is the
+   * short-phone case (360×640, 375×667, 320×568) and the real iPhone with
+   * toolbars (390×660 svh). The emblem steps down to
+   * `clamp(96px, 16svh, 140px)` and every vertical rhythm value to 75%
+   * (24 → 18, 32 → 24, 20 → 15, 28 → 21, 24 → 18), so the headline, copy and
+   * Primary_CTA still land above the fold from 360×548 (Req 1.3). The
+   * framing spine and plinth read the same tokens, so they follow.
+   * Inline gutters, the header and safe areas are unchanged.
+   */
+  @media (orientation: portrait) and (max-height: 719.98px) and (max-width: 767.98px) {
+    .hero {
+      --hero-pad-top: 18px;
+      --hero-gap-emblem: 24px;
+      --hero-gap-copy: 15px;
+      --hero-gap-cta: 21px;
+      --hero-pad-bottom: 18px;
+    }
+
+    .hero__stage {
+      block-size: clamp(96px, 16vh, 140px);
+    }
+
+    /* Nested so the compact upgrade follows (and beats) the tall one. */
+    @supports (height: 1svh) {
+      .hero__stage {
+        block-size: clamp(96px, 16svh, 140px);
+      }
+    }
+  }
+
+  /*
+   * Headline measure caps (docs/decisions.md, task 3.2; mirrors
+   * HEADLINE_MEASURE_CAPS). Keyed to the text container's inline size so the
+   * line count is identical for the fallback and Inter renders (Req 16.3):
+   *   < 335 px   → 7.6em            (5 lines)
+   *   335–403 px → 9.4em            (4 lines)
+   *   ≥ 404 px   → min(13em, 20ch)  (3 lines)
+   * From 1024 `type-display` also sets `max-inline-size: 20ch` (utilities
+   * layer), which is the same bound as min(13em, 20ch) for Inter.
+   */
+  .hero-headline {
+    max-inline-size: 7.6em;
+    color: var(--color-ivory-50);
+  }
+
+  @container hero-text (min-width: 335px) {
+    .hero-headline {
+      max-inline-size: 9.4em;
+    }
+  }
+
+  @container hero-text (min-width: 404px) {
+    .hero-headline {
+      max-inline-size: min(13em, 20ch);
+    }
+  }
+
+  /* Supporting_Copy: body role, ivory-300 (9.11:1 on the stage). */
+  .hero-supporting {
+    margin-block-start: var(--hero-gap-copy);
+    color: var(--color-ivory-300);
+  }
+
+  .hero-actions {
+    margin-block-start: var(--hero-gap-cta);
+  }
+
+  /* Optional meta-role elements (Req 3.5, 3.6, 3.10), off in v1. */
+  .hero-etymology {
+    margin-block-end: var(--hero-gap-copy);
+    color: var(--color-ivory-300);
+  }
+
+  .hero-services {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-block-start: var(--hero-gap-cta);
+    padding: 0;
+    list-style: none;
+    color: var(--color-ivory-300);
+  }
+}
+
+/*
+ * Navigation (components/layout/nav-list.tsx, site-header.tsx; design:
+ * Header system). Req 7.5, 7.8, 7.10, 7.13, 8.11, 8.14, 10.9, 12.3, 12.8.
+ *
+ * - Inline nav: only from 1280 (xl), in the middle header zone, end-aligned
+ *   toward the actions. `display: none` below 1280 removes it from display,
+ *   focus order and the accessibility tree (Req 7.13). One row, no wrap.
+ * - Every item is a ≥ 44 × 44 hit area (Req 10.9); list gaps (24 / 28 inline,
+ *   8 menu and disclosure) keep ≥ 8 px between adjacent targets.
+ * - Live: ivory-50. Hover (hover-capable pointers) or press (touch) fades in
+ *   a 1 px gold-500 underline layer over --dur-micro; color is never animated.
+ * - Planned: ivory-300 label, no underline, default cursor. Focus ring is
+ *   the standard :focus-visible ring (2 px ivory-50, 3 px offset).
+ */
+@layer components {
+  .site-header__nav {
+    display: none;
+    grid-column: 2;
+    justify-self: end;
+    min-inline-size: 0;
+
+    @media (min-width: 80rem) {
+      display: block;
+    }
+  }
+
+  .nav-list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .nav-list__item {
+    display: flex;
+  }
+
+  .nav-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    box-sizing: border-box;
+    min-block-size: 44px;
+    min-inline-size: 44px;
+    color: var(--color-ivory-50);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  /* Underline layer: sits just under the text line, not at the box edge. */
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    inset-block-end: calc(50% - 0.75em);
+    block-size: 1px;
+    background-color: var(--color-gold-500);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--dur-micro) var(--ease-state);
+  }
+
+  @media (hover: hover) {
+    .nav-link[data-nav-status="live"]:hover::after {
+      opacity: 1;
+    }
+  }
+
+  @media (hover: none) {
+    .nav-link[data-nav-status="live"]:active::after {
+      opacity: 1;
+      transition-duration: 0s;
+    }
+  }
+
+  .nav-link[aria-disabled="true"] {
+    color: var(--color-ivory-300);
+    cursor: default;
+  }
+
+  .nav-link[aria-disabled="true"]::after {
+    display: none;
+  }
+
+  /* Current route (also announced via aria-current, never color alone). */
+  .nav-link[aria-current="page"]::after {
+    opacity: 1;
+  }
+
+  /* Inline nav: the current route is marked by a 2 px gold bar on the
+     header's bottom edge, a permanent Peyman signature; hover keeps the
+     fine underline under the label. */
+  .nav-list--inline .nav-link[aria-current="page"]::after {
+    inset-block-end: calc((44px - var(--header-h)) / 2);
+    block-size: 2px;
+  }
+
+  .nav-list--inline .nav-link[aria-current="page"] {
+    color: var(--color-ivory-50);
+  }
+
+  .nav-list--inline .nav-link:not([aria-current]) {
+    color: color-mix(in srgb, var(--color-ivory-50) 82%, var(--color-ivory-300));
+  }
+
+  /* Divider between the route index and the CTA (≥ 1280). */
+  .site-header[data-nav="items"] .site-header__actions {
+    @media (min-width: 80rem) {
+      padding-inline-start: 28px;
+      border-inline-start: 1px solid color-mix(in srgb, var(--color-ivory-50) 14%, transparent);
+    }
+  }
+
+  /* Inline label boxes are fixed in em (lib/nav-metrics.ts) so a font swap
+     cannot move the right-anchored nav (CLS 0). */
+  .nav-list--inline .nav-link {
+    inline-size: var(--nav-w, auto);
+    justify-content: flex-start;
+  }
+
+  /* Inline (header, ≥ 1280): 24 px gaps to 1439, 28 px from 1440 (risk R6). */
+  .nav-list--inline {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    column-gap: 24px;
+
+    @media (min-width: 90rem) {
+      column-gap: 28px;
+    }
+  }
+
+  /* Mobile_Menu (task 8.5): display role 28–32 px, 56 px rows, 8 px apart. */
+  .nav-list--menu {
+    flex-direction: column;
+    row-gap: 8px;
+  }
+
+  .nav-list--menu .nav-link {
+    inline-size: 100%;
+    min-block-size: 56px;
+  }
+
+  /* No-JS disclosure (task 8.4): CTA role, 48 px rows, 8 px apart. */
+  .nav-list--disclosure {
+    flex-direction: column;
+    row-gap: 8px;
+  }
+
+  .nav-list--disclosure .nav-link {
+    inline-size: 100%;
+    min-block-size: 48px;
+  }
+
+  @media (forced-colors: active) {
+    .nav-link::after {
+      display: none;
+    }
+
+    @media (hover: hover) {
+      .nav-link[data-nav-status="live"]:hover {
+        text-decoration: underline;
+      }
+    }
+
+    /* Touch press mirrors the forced-colors hover underline (Req 10.8). */
+    @media (hover: none) {
+      .nav-link[data-nav-status="live"]:active {
+        text-decoration: underline;
+      }
+    }
+
+    .nav-link[aria-disabled="true"] {
+      color: GrayText;
+    }
+
+    .nav-link:focus-visible {
+      outline: 2px solid Highlight;
+      outline-offset: 3px;
+    }
+  }
+}
+
+/*
+ * Emblem_Stage and Raster_Emblem (components/hero/emblem-stage.tsx,
+ * emblem-visual.tsx, raster-emblem.tsx; design: Hero composition layer stack,
+ * Emblem rendering architecture). Req 2.6, 4.4, 5.3, 5.4, 5.6, 16.2, 17.1.
+ *
+ * The slot box (size, grid placement) comes from `.hero__stage` and, per band,
+ * from tasks 12.1 / 13.1. Everything inside fills it at 100% × 100%, so the
+ * renderer never changes the box. `--emblem-anchor-x/y` (from Site_Config
+ * `emblem.anchor`) is the transform origin of every motion wrapper.
+ *
+ * Layers sit in the Hero's stacking context (the stage sets no z-index):
+ * Light_Layer at z 2, the emblem group at z 3 (framing is z 1, text z 5).
+ */
+@layer components {
+  .emblem-stage {
+    --emblem-origin: var(--emblem-anchor-x, 50%) var(--emblem-anchor-y, 50%);
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  /* Light_Layer slot (vignette + light pool, task 11.2). Inside the stage
+     bounds, never interactive (Req 5.4). Paints nothing yet. */
+  .light-parallax {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  /* Motion wrappers: Scroll_Exit → Pointer_Parallax (GSAP) → CSS intro. */
+  .emblem-scroll {
+    position: relative;
+    z-index: 3;
+  }
+
+  .emblem-scroll,
+  .emblem-parallax,
+  .emblem-intro {
+    inline-size: 100%;
+    block-size: 100%;
+    transform-origin: var(--emblem-origin);
+  }
+
+  .raster-emblem {
+    position: relative;
+    inline-size: 100%;
+    block-size: 100%;
+  }
+
+  /* The emblem itself: uniform scaling only; no filter, mask or blend (Req 4.4).
+     `color: transparent` (also set inline by next/image) hides alt text. */
+  .raster-emblem__img {
+    position: relative;
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: contain;
+    color: transparent;
+    user-select: none;
+  }
+
+  /* Solid navy-950 placeholder until decode (Req 16.2). next/image keeps an
+     inline `background-image` (an empty SVG, see raster-emblem.tsx) until the
+     image has loaded and decoded, then removes it; the color is a token. */
+  .raster-emblem__img[style*="background-image"] {
+    background-color: var(--color-navy-950);
+  }
+
+  /* Failure (Req 17.1): pseudo-elements on <img> render only when the image
+     failed, so this cover never sits over a loaded emblem. It keeps the
+     navy-950 box and hides Chromium's broken-image icon. Chromium and
+     Firefox render it; WebKit renders no generated content on <img>, so
+     there the failed box keeps its size (CLS 0) and `alt=""` but loses the
+     tint (see docs/decisions.md, "Fallbacks audit (task 20.1)"). */
+  .raster-emblem__img::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--color-navy-950);
+  }
+
+  /* Specular copy (D7). Hidden at rest, so its blend costs nothing.
+     components/motion/sweep.ts sets `data-sweep="active"` on `.raster-emblem`
+     and tweens `--sweep-x` from -60% to 160%, which moves the band through
+     `mask-position` (prefixed and unprefixed alike). The mask is one 2-stop
+     radial band (ivory-50 100% → 0%), a soft ellipse 28% wide and 160% tall,
+     so it reads as a near-vertical shaft of light with no hard edge. An 18°
+     tilt is not expressible with a single 2-stop gradient that fades on both
+     sides (a linear band needs 3 stops and the Emblem_Stage budget is 3
+     gradients × 2 stops, Req 2.2), so the band stays axis-aligned. The
+     copy's own alpha confines the light to the emblem. */
+  .raster-emblem__specular {
+    position: absolute;
+    inset: 0;
+    display: none;
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: contain;
+    opacity: 0.55;
+    mix-blend-mode: screen;
+    pointer-events: none;
+    user-select: none;
+    -webkit-mask-image: radial-gradient(closest-side, var(--color-ivory-50), color-mix(in srgb, var(--color-ivory-50) 0%, transparent));
+    mask-image: radial-gradient(closest-side, var(--color-ivory-50), color-mix(in srgb, var(--color-ivory-50) 0%, transparent));
+    -webkit-mask-size: 28% 160%;
+    mask-size: 28% 160%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: var(--sweep-x, -60%) 50%;
+    mask-position: var(--sweep-x, -60%) 50%;
+  }
+
+  .raster-emblem[data-sweep="active"] .raster-emblem__specular {
+    display: block;
+  }
+
+  /* No mask support (Req 17.9): the copy would be an unmasked, screen-blended
+     duplicate over the whole emblem box. sweep.ts never arms it then
+     (`supportsMask()`, same probe); this CSS guard keeps it hidden even if
+     `data-sweep` were set, so no rectangular highlight can appear. The
+     Light_Layer (vignette and pool) uses no mask and is unaffected. */
+  @supports not ((mask-image: linear-gradient(black, black)) or (-webkit-mask-image: linear-gradient(black, black))) {
+    .raster-emblem .raster-emblem__specular,
+    .raster-emblem[data-sweep="active"] .raster-emblem__specular {
+      display: none;
+    }
+  }
+}
+
+/*
+ * No-JS menu disclosure (components/layout/nojs-menu.tsx; design: Header
+ * system, "No-JS"). Req 7.13, 10.9, 12.3, 12.8, 17.4–17.6.
+ *
+ * - `.site-header__menu` is the trigger slot in the actions zone. It exists
+ *   only when Nav_Items render (DEC-01) and is `display: none` from 1280,
+ *   where the inline nav takes over. It is a one-cell grid: the disclosure
+ *   and (task 8.5) the JS trigger share cell 1/1, so the slot is as wide as
+ *   the wider of the two in both states and the swap moves nothing (CLS 0).
+ * - After hydration task 8.5 sets `data-menu-ready="true"` on the slot. The
+ *   disclosure is then `visibility: hidden`: unpainted, unfocusable and out
+ *   of the accessibility tree, while its summary box still sizes the cell.
+ * - The panel is `position: fixed` just below the header (the header has no
+ *   transform, filter or containment, so the viewport is its containing
+ *   block). It scrolls vertically inside the viewport; nav labels may wrap,
+ *   so there is no horizontal overflow at 320. Full width below 768; a right
+ *   panel `min(420px, 100vw)` from 768 (design Mobile_Menu surfaces).
+ * - While open, the header's scrolled surface is shown so header and panel
+ *   read as one surface.
+ */
+@layer components {
+  .site-header__menu {
+    display: grid;
+    place-items: center;
+    min-inline-size: 44px;
+    min-block-size: 44px;
+
+    @media (min-width: 80rem) {
+      display: none;
+    }
+  }
+
+  .site-header__menu > * {
+    grid-area: 1 / 1;
+  }
+
+  .site-header__menu[data-menu-ready="true"] > [data-nojs-menu] {
+    visibility: hidden;
+  }
+
+  .site-header:has(.nojs-menu[open]) .site-header__surface {
+    opacity: 1;
+  }
+
+  .nojs-menu__summary {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    min-inline-size: 44px;
+    min-block-size: 44px;
+    color: var(--color-ivory-50);
+    list-style: none;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+  }
+
+  /* Remove the disclosure triangle in every engine. */
+  .nojs-menu__summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .nojs-menu__summary::marker {
+    content: "";
+  }
+
+  /* Open state: a 1 px ivory-50 rule under the label (never color alone). */
+  .nojs-menu__summary::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    inset-block-end: calc(50% - 0.75em);
+    block-size: 1px;
+    background-color: var(--color-ivory-50);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .nojs-menu[open] > .nojs-menu__summary::after {
+    opacity: 1;
+  }
+
+  .nojs-menu__panel {
+    position: fixed;
+    inset-block-start: calc(var(--header-h) + env(safe-area-inset-top));
+    inset-inline: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    /* vh base; dvh upgrade in the feature query below (Req 17.8). */
+    max-block-size: calc(100vh - var(--header-h) - env(safe-area-inset-top));
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    /* Focused items scroll fully into view, focus ring included (Req 12.3). */
+    scroll-padding-block: 16px;
+    padding-block: 24px calc(24px + env(safe-area-inset-bottom));
+    padding-inline-start: max(var(--gutter-base), env(safe-area-inset-left));
+    padding-inline-end: max(var(--gutter-base), env(safe-area-inset-right));
+    background-color: var(--color-navy-950);
+    border-block-start: 1px solid color-mix(in srgb, var(--color-ivory-50) 8%, transparent);
+
+    @media (min-width: 48rem) {
+      inset-inline-start: auto;
+      inline-size: min(420px, 100vw);
+      padding-inline-start: 40px;
+    }
+  }
+
+  @supports (height: 1dvh) {
+    .nojs-menu__panel {
+      max-block-size: calc(100dvh - var(--header-h) - env(safe-area-inset-top));
+    }
+  }
+
+  /* One ivory-50 8% hairline between the nav list and the CTA. */
+  .nojs-menu__nav {
+    padding-block-end: 24px;
+    border-block-end: 1px solid color-mix(in srgb, var(--color-ivory-50) 8%, transparent);
+  }
+
+  .nojs-menu .nav-link {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .nojs-menu__cta {
+    inline-size: 100%;
+  }
+
+  @media (forced-colors: active) {
+    .nojs-menu__summary {
+      border: 1px solid ButtonText;
+    }
+
+    .nojs-menu__summary:focus-visible {
+      outline: 2px solid Highlight;
+      outline-offset: 3px;
+    }
+
+    .nojs-menu__panel {
+      border: 1px solid CanvasText;
+    }
+  }
+}
+
+/*
+ * Hero framing (components/hero/hero-framing.tsx; design: Hero composition
+ * layer stack, z 1 "Framing"). Req 2.1, 2.2, 2.5, 2.6, 2.7, 4.3, 12.8.
+ *
+ * Stage gradient: already on `.hero` (one 2-stop navy-950 → ink-950
+ * gradient, full-bleed at every width); nothing is added here.
+ *
+ * Framing: three kinds of 1 px CSS box, colored with Palette tokens at a
+ * fixed alpha (no opacity, so the intro can own opacity-free transforms):
+ * - spine: ivory-50 at 8%, a vertical grid line in a column gap;
+ * - ticks: ivory-50 at 10%, three short inline marks on the spine;
+ * - plinth: gold-500 at 32%, along the emblem base. Mirrors
+ *   `computeHeroLayout().plinth` (lib/layout-model.ts): top edge at the
+ *   emblem's bottom edge; counted in the gold budget (Req 4.3).
+ *
+ * `.hero-framing` is absolutely positioned against the Hero grid, placed by
+ * grid lines (`--frame-area-*`), so it never takes a grid cell. It is a
+ * stacking context at z 1 inside the Hero's: under the Light_Layer (2), the
+ * emblem group (3) and the text block (5, set below).
+ *
+ * Mobile portrait (the base; landscape and ≥ 768 values are set in the
+ * "Hero band layouts" block below, task 12.1):
+ * - The layer covers grid row 1, the Emblem_Stage row. That row's bottom is
+ *   the emblem bottom plus its `margin-block-end` (`--hero-gap-emblem`).
+ * - Spine: in the gap after column 1, from the header bottom (the layer top
+ *   minus `--hero-pad-top`) down to the plinth, where it stands on it.
+ *   It lives in the empty columns beside the end-aligned emblem, above the
+ *   headline, so it never meets text or CTAs.
+ * - Ticks: at 1/4, 1/2 and 3/4 of the spine, 8 px toward the emblem.
+ * - Plinth: the full content width in the gap under the emblem.
+ *
+ * Variables for task 12.1 (side-by-side bands). Suggested values:
+ *   --frame-area-rows      1 / 2 (single row) or the row(s) of both columns
+ *   --frame-cols / --frame-gap  8 / 24px (tablet), 12 / 32px (≥ 1024)
+ *   --frame-spine-line     5 (tablet), 7 (≥ 1024): the gap between text and
+ *                          emblem spans, so the spine sits 12 / 16 px from each
+ *   --frame-spine-start    negative distance from the layer top to the header
+ *                          bottom (the spine then runs the Hero's full height)
+ *   --frame-spine-end      negative distance from the layer bottom to the
+ *                          Hero bottom (the drafting line continues down)
+ *   --frame-plinth-lift    layer bottom → emblem bottom (0 when the emblem
+ *                          fills the row and has no block margin)
+ *   --frame-plinth-start   emblem inline-start offset from the grid start
+ *                          (the emblem is end-aligned in its span)
+ *   --frame-plinth-end     0; from 1920 a negative value reaching the Hero's
+ *                          inline-end edge (never beyond it: the Hero's clip
+ *                          margin would otherwise create overflow)
+ *   --frame-tick-len       ≤ half the gap minus 2 px (for example 8px)
+ * Percentages in these variables resolve against the framing layer.
+ *
+ * Intro hooks (task 15.1): every line carries `data-intro="hairline"`. The
+ * spine's transform origin is its top (scaleY), the ticks' and plinth's is
+ * their inline-start edge (scaleX; the site is LTR only). Final state now.
+ */
+@layer components {
+  /* Containing block for the framing layer (placed by grid lines). */
+  .hero__grid {
+    position: relative;
+  }
+
+  /* Text block above every stage layer (design layer stack z 5). */
+  .hero__text {
+    position: relative;
+    z-index: 5;
+  }
+
+  .hero-framing {
+    --frame-area-cols: 1 / -1;
+    --frame-area-rows: 1 / 2;
+    --frame-cols: 4;
+    --frame-gap: 16px;
+    --frame-spine-line: 1;
+    --frame-spine-start: calc(-1 * var(--hero-pad-top));
+    --frame-plinth-lift: var(--hero-gap-emblem);
+    --frame-spine-end: var(--frame-plinth-lift);
+    --frame-plinth-start: 0px;
+    --frame-plinth-end: 0px;
+    --frame-tick-len: 8px;
+    /* Inline offset of the column line after `--frame-spine-line`, centered
+       in its gap: k × column width + (k − ½) × gap. */
+    --frame-spine-x: calc(
+      var(--frame-spine-line) * (100% - (var(--frame-cols) - 1) * var(--frame-gap)) / var(--frame-cols) +
+        (var(--frame-spine-line) - 0.5) * var(--frame-gap)
+    );
+
+    position: absolute;
+    grid-column: var(--frame-area-cols);
+    grid-row: var(--frame-area-rows);
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .hero-framing__spine,
+  .hero-framing__tick,
+  .hero-framing__plinth {
+    position: absolute;
+  }
+
+  .hero-framing__spine {
+    inset-inline-start: var(--frame-spine-x);
+    inset-block-start: var(--frame-spine-start);
+    inset-block-end: var(--frame-spine-end);
+    inline-size: 1px;
+    background-color: color-mix(in srgb, var(--color-ivory-50) 8%, transparent);
+    transform-origin: 50% 0;
+  }
+
+  .hero-framing__tick {
+    inset-inline-start: calc(var(--frame-spine-x) + 1px);
+    /* Along the spine: start + at × (spine length). */
+    inset-block-start: calc(
+      var(--frame-spine-start) +
+        var(--frame-tick-at) * (100% - var(--frame-spine-start) - var(--frame-spine-end))
+    );
+    inline-size: var(--frame-tick-len);
+    block-size: 1px;
+    background-color: color-mix(in srgb, var(--color-ivory-50) 10%, transparent);
+    transform-origin: 0 50%;
+  }
+
+  .hero-framing__plinth {
+    inset-inline-start: var(--frame-plinth-start);
+    inset-inline-end: var(--frame-plinth-end);
+    inset-block-start: calc(100% - var(--frame-plinth-lift));
+    block-size: 1px;
+    background-color: color-mix(in srgb, var(--color-gold-500) 32%, transparent);
+    transform-origin: 0 50%;
+  }
+
+  /* Decoration only (Req 12.8). */
+  @media (forced-colors: active) {
+    .hero-framing {
+      display: none;
+    }
+  }
+}
+
+/*
+ * Light_Layer (components/hero/emblem-stage.tsx; design: Hero composition
+ * layer stack, z 2). Req 2.2, 2.6, 5.4, 9.10, 12.8, 17.1, 17.9.
+ *
+ * One lit object on a stage: a shadow well that deepens the stage behind the
+ * emblem, so its gold edges and navy metal separate from the navy air, and a
+ * warm pool of light on the plinth at the foot of the column. No glow over
+ * the emblem, no haze: both sit under the emblem group (z 3), in Palette
+ * tokens only, and never touch the emblem pixels (Req 4.4).
+ *
+ * Structure (one motion owner per element, design GSAP rule 4):
+ * - `.light-stage`: static, the slot box exactly, `overflow: clip`. This is
+ *   the "stays inside the Emblem_Stage bounds" guarantee (Req 5.4), whatever
+ *   Pointer_Parallax does.
+ * - `.light-parallax`: GSAP target (task 16.5, ≤ 12 px opposite the emblem).
+ *   It bleeds `--light-bleed` (= distance.parallaxMax) past the slot on every
+ *   side, so a shift never uncovers an unlit strip.
+ * - `.light-layer[data-intro="atmosphere"]`: CSS intro hook (task 15.1,
+ *   opacity 0 → 1). Rendered at its final state here.
+ * - `::before` vignette and `::after` light pool. Two 2-stop radial
+ *   gradients; with the sweep mask the Emblem_Stage uses 3 (Req 2.2).
+ *
+ * Seam-free by construction. A clipped layer whose edge is not transparent
+ * draws the slot's rectangle onto the stage, so both gradients reach 0% on
+ * or outside the slot edges:
+ * - Vignette: `ink-950` 72% at the emblem's center of mass → 0% at the slot
+ *   edges (closest-side). The dark sits behind the object and falls off into
+ *   the ambient navy: the bounded form of the design's ink-950 0 → 72%
+ *   vignette (the light falls off toward the object's surround). Its box is
+ *   the slot, so any parallax shift keeps its transparent rim inside.
+ * - Pool: `gold-500` 12% → 0%, an ellipse centered on the plinth line (the
+ *   slot's bottom edge) under the emblem's middle. Its inline radius is half
+ *   the slot, so it reaches 0% at both inline edges; the base itself is
+ *   opaque, so the light reads where it spills past the base and up the
+ *   empty lower-right of the slot. Only the upper half is visible, and the
+ *   clip edge coincides with the gold plinth hairline. Its box extends
+ *   `--light-bleed` below the slot so a vertical shift never cuts it.
+ *
+ * Static resting frame (Req 9.10, 9.12): exactly this composition; the
+ * specular copy is `display: none`. Nothing here animates or uses a mask, so
+ * no-JS, reduced motion, low power and no `mask-image` support (Req 17.9)
+ * all render it unchanged. It is also the sweep's resting frame (task 17.1):
+ * sweep.ts `toRest` (on complete, pause, bfcache and matchMedia revert)
+ * removes `data-sweep` and `--sweep-x`, so the copy returns to
+ * `display: none` and the Light_Layer is never written by the sweep. A
+ * runtime toggle to reduce mid-sweep therefore lands on this exact frame.
+ */
+@layer components {
+  .emblem-stage {
+    --light-bleed: 12px;
+  }
+
+  .light-stage {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    overflow: clip;
+    pointer-events: none;
+  }
+
+  /* Overrides the placeholder slot rule above: the stacking lives on
+     `.light-stage` now; this wrapper only carries the parallax transform. */
+  .light-parallax {
+    inset: calc(-1 * var(--light-bleed));
+    z-index: auto;
+  }
+
+  .light-layer {
+    position: absolute;
+    inset: 0;
+  }
+
+  .light-layer::before,
+  .light-layer::after {
+    content: "";
+    position: absolute;
+  }
+
+  /* Vignette: the slot box; 72% ink behind the emblem's mass, 0% at the rim. */
+  .light-layer::before {
+    inset: var(--light-bleed);
+    background-image: radial-gradient(
+      closest-side at 54% 48%,
+      color-mix(in srgb, var(--color-ink-950) 72%, transparent),
+      color-mix(in srgb, var(--color-ink-950) 0%, transparent)
+    );
+  }
+
+  /* Light pool: centered on the plinth under the column; clipped at the plinth. */
+  .light-layer::after {
+    inset: var(--light-bleed) var(--light-bleed) 0;
+    background-image: radial-gradient(
+      50% 36% at 50% calc(100% - var(--light-bleed)),
+      color-mix(in srgb, var(--color-gold-500) 12%, transparent),
+      color-mix(in srgb, var(--color-gold-500) 0%, transparent)
+    );
+  }
+
+  /* Emblem failure (Req 17.1): keep the vignette and pool visible through
+     the navy-950 placeholder. Pseudo-elements on <img> render only when the
+     image failed. An opaque cover would hide the Light_Layer (z 2) under it,
+     and Chromium draws its broken-image UI even for `alt=""` when the image
+     has width/height: a 1 px silver frame and a 16 px icon at the top-left
+     (1 px padding). So the cover (::after, from the Emblem_Stage rules above)
+     becomes a translucent navy-950 tint whose opaque 2 px navy-950 border
+     hides that frame, and ::before is an opaque navy-950 square over the
+     icon corner, where both light gradients are already transparent. */
+  .raster-emblem__img::after {
+    box-sizing: border-box;
+    border: 2px solid var(--color-navy-950);
+    background-color: color-mix(in srgb, var(--color-navy-950) 32%, transparent);
+  }
+
+  .raster-emblem__img::before {
+    content: "";
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    inline-size: 20px;
+    block-size: 20px;
+    background-color: var(--color-navy-950);
+  }
+
+  /* Decoration only (Req 12.8). */
+  @media (forced-colors: active) {
+    .light-stage {
+      display: none;
+    }
+  }
+}
+
+/*
+ * Hero band layouts (components/hero/hero.tsx; design: Layout architecture,
+ * Responsive behavior). Req 2.3, 2.4, 6.9, 10.7, 11.1–11.9, 16.3.
+ * Mirrors `computeHeroLayout()` in lib/layout-model.ts; values must change
+ * together (docs/decisions.md, tasks 10.1, 11.1 and 12.1).
+ *
+ * The mobile portrait base above is unchanged. Two recompositions build on it:
+ *
+ * - Landscape phone (`landscape-short`: w > h, h < 480, w < 1024): a 60 / 40
+ *   split with a 24 px gap. Both columns start at the padded top (header +
+ *   24 px), with the tall mobile rhythm and gutters. The emblem is
+ *   end-aligned in the 40% column: `min(column, 70svh × aspect)`.
+ * - Side by side (≥ 768 wide and ≥ 480 tall, or ≥ 1024 wide):
+ *     tablet   768–1023   8 cols / 24   text 1–5   emblem 6–8
+ *                                        min(span, 46svh × aspect)
+ *     desktop  1024–1279 12 cols / 32   text 1–7   emblem 8–12 min(span, 460)
+ *     wide     1280–1919 content ≤ 1360, centered  emblem min(span, 580)
+ *     ultra    ≥ 1920    content ≤ 1680, centered  emblem min(span, 620)
+ *   The text block and the emblem are each centered in the region between
+ *   the header and the Hero bottom, with 48 px block padding (Req 11.5).
+ *   The emblem is taller than the text from 1024, so its capital rises above
+ *   the headline's cap line and its plinth falls below the CTAs: the first
+ *   headline line and the capital share a band. Rhythm: headline → copy
+ *   `clamp(24px, 2vw, 32px)`, copy → CTA `clamp(32px, 3vw, 48px)`.
+ *
+ * Geometry shared by the stage and the framing layer is expressed once, in
+ * container units of `.hero` (content box = viewport minus gutters):
+ *   --hero-content-w   content box (capped at 1360 / 1680)
+ *   --hero-emblem-w    rendered emblem width for the band
+ * `--emblem-aspect` (Site_Config `emblem.aspectRatio`, a number) is set on
+ * the Hero section, so the framing layer can derive the emblem height. The
+ * variables are token streams: `cqw` resolves where they are used (the stage
+ * and framing lines, whose nearest size container is `.hero`).
+ *
+ * No JS measurement; headline measure caps stay container queries on the
+ * text block (`.hero-text`), and `type-display` adds `20ch` from 1024.
+ */
+@layer components {
+  .hero {
+    container: hero / inline-size;
+  }
+
+  /* Landscape phone: 60 / 40 split. */
+  @media (orientation: landscape) and (max-height: 479.98px) and (max-width: 1023.98px) {
+    /* A one-track grid so the content grid stretches to the Hero's height
+       (the spine then reaches the Hero bottom). */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .hero__grid {
+      --hero-emblem-w: min((100cqw - 24px) * 0.4, 70 * var(--hero-svh) * var(--emblem-aspect));
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      column-gap: 24px;
+      align-items: start;
+    }
+
+    .hero__text {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .hero__stage {
+      grid-column: 2;
+      grid-row: 1;
+      order: 0;
+      justify-self: end;
+      inline-size: var(--hero-emblem-w);
+      block-size: auto;
+      margin-block-end: 0;
+    }
+
+    /* Spine in the 24 px gap between the columns, header bottom to Hero
+       bottom; plinth at the emblem base, emblem start → content end. */
+    .hero-framing {
+      --frame-spine-x: calc((100% - 24px) * 0.6 + 12px);
+      --frame-spine-start: calc(-1 * var(--hero-pad-top));
+      --frame-spine-end: calc(-1 * (var(--hero-pad-bottom) + env(safe-area-inset-bottom)));
+      --frame-plinth-lift: calc(100% - var(--hero-emblem-w) / var(--emblem-aspect));
+      --frame-plinth-start: calc(100% - var(--hero-emblem-w));
+      --frame-plinth-end: 0px;
+    }
+  }
+
+  /* Side-by-side bands (tablet, desktop, wide, ultra). */
+  @media (min-width: 48rem) and (min-height: 480px), (min-width: 64rem) {
+    .hero {
+      --hero-pad-top: 0px;
+      --hero-pad-bottom: 0px;
+      --hero-gap-emblem: 0px;
+      --hero-gap-copy: clamp(24px, 2vw, 32px);
+      --hero-gap-cta: clamp(32px, 3vw, 48px);
+      --hero-block-pad: 48px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      /* The region below the header runs to the Hero bottom; the grid's
+         block padding is the ≥ 48 px breathing room (Req 11.5). */
+      padding-block-end: 0;
+    }
+
+    .hero__grid {
+      --hero-cols: 8;
+      --hero-gap: 24px;
+      --hero-content-w: 100cqw;
+      --hero-col-w: calc((var(--hero-content-w) - (var(--hero-cols) - 1) * var(--hero-gap)) / var(--hero-cols));
+      --hero-emblem-span-w: calc(3 * var(--hero-col-w) + 2 * var(--hero-gap));
+      --hero-emblem-w: min(var(--hero-emblem-span-w), 46 * var(--hero-svh) * var(--emblem-aspect));
+      grid-template-columns: repeat(var(--hero-cols), minmax(0, 1fr));
+      column-gap: var(--hero-gap);
+      align-items: center;
+      box-sizing: border-box;
+      inline-size: 100%;
+      margin-inline: auto;
+      padding-block: var(--hero-block-pad);
+    }
+
+    .hero__text {
+      grid-column: 1 / span 5;
+      grid-row: 1;
+    }
+
+    .hero__stage {
+      grid-column: 6 / -1;
+      grid-row: 1;
+      order: 0;
+      justify-self: end;
+      inline-size: var(--hero-emblem-w);
+      block-size: auto;
+      margin-block-end: 0;
+    }
+
+    /* Spine in the gap between the text and emblem spans, header bottom to
+       Hero bottom (the drafting line continues into later sections). The
+       emblem is centered in the row, so its base sits at 50% + height / 2. */
+    .hero-framing {
+      --frame-cols: var(--hero-cols);
+      --frame-gap: var(--hero-gap);
+      --frame-spine-line: 5;
+      --frame-spine-start: calc(-1 * var(--hero-block-pad));
+      --frame-spine-end: calc(-1 * var(--hero-block-pad));
+      --frame-plinth-lift: calc(50% - var(--hero-emblem-w) / var(--emblem-aspect) / 2);
+      --frame-plinth-start: calc(100% - var(--hero-emblem-w));
+      --frame-plinth-end: 0px;
+    }
+  }
+
+  /* Desktop and up: 12 columns, text 1–7, emblem 8–12 (D3). */
+  @media (min-width: 64rem) {
+    .hero__grid {
+      --hero-cols: 12;
+      --hero-gap: 32px;
+      --hero-emblem-span-w: calc(5 * var(--hero-col-w) + 4 * var(--hero-gap));
+      --hero-emblem-w: min(var(--hero-emblem-span-w), 460px);
+    }
+
+    .hero__text {
+      grid-column: 1 / span 7;
+    }
+
+    .hero__stage {
+      grid-column: 8 / -1;
+    }
+
+    .hero-framing {
+      --frame-spine-line: 7;
+    }
+  }
+
+  /* Wide: content box capped at 1360 and centered. */
+  @media (min-width: 80rem) {
+    .hero__grid {
+      --hero-content-w: min(100cqw, var(--container-content-wide, 85rem));
+      --hero-emblem-w: min(var(--hero-emblem-span-w), 580px);
+      max-inline-size: var(--container-content-wide, 85rem);
+    }
+  }
+
+  /* Ultra: content box capped at 1680; the stage background stays full-bleed
+     (`.hero` is full width) and the plinth runs on to the Hero's inline-end
+     edge, the one full-bleed gesture. It stops exactly at that edge, so the
+     Hero's clip margin never creates horizontal overflow. */
+  @media (min-width: 120rem) {
+    .hero__grid {
+      --hero-content-w: min(100cqw, var(--container-content-ultra, 105rem));
+      --hero-emblem-w: min(var(--hero-emblem-span-w), 620px);
+      max-inline-size: var(--container-content-ultra, 105rem);
+    }
+
+    .hero-framing {
+      --frame-plinth-end: calc(
+        -1 * (max(var(--gutter-base), env(safe-area-inset-right)) + (100cqw - var(--hero-content-w)) / 2)
+      );
+    }
+  }
+}
+
+/*
+ * Mobile_Menu (components/layout/mobile-menu.tsx, components/motion/
+ * use-menu-motion.ts; design: Header system, Motion choreography).
+ * Req 7.12, 8.1–8.4, 8.9–8.11, 9.1, 9.10, 10.9, 12.3, 12.8.
+ *
+ * Trigger: two 1 px ivory-50 lines, 20 px wide and 6 px apart, in a 44 × 44
+ * button that shares the slot's grid cell with the no-JS disclosure. It is
+ * `visibility: hidden` until hydration (`data-menu-ready`), so before then
+ * only the working `details` is visible and focusable. Expanded, the lines
+ * turn to an × over --dur-ui (transform only).
+ *
+ * Layers (portaled to body, siblings of header and main):
+ * - Below 768: the panel is the whole screen (100dvh, 100vh fallback),
+ *   navy-950, padded by every safe-area inset; no backdrop.
+ * - 768–1279: a right panel `min(420px, 100vw)` with a 1 px ivory-50 8%
+ *   start hairline, over an ink-950 64% backdrop (z 60 / 70).
+ * The panel's top bar is exactly the header row (`--header-h` under the top
+ * safe area, inline-end gutter equal to the header's), so the close control
+ * sits where the trigger was.
+ *
+ * Composition: an editorial index. Large display-role items (28–32 px) on
+ * 56 px rows, divided by 1 px ivory-50 8% hairlines (4 px + 1 px + 4 px
+ * between targets, ≥ 8 px). The footer (Primary_CTA, then the location in
+ * the meta role) sits on the panel's base line: a single hairline, like the
+ * Hero plinth, with the free space above it.
+ *
+ * Motion (CSS only; phases from `data-phase`; opacity and transform only):
+ * - open: panel fade + 8 px drop (mobile) or 24 px slide (tablet) over
+ *   --dur-panel (360 ms, entrance curve); backdrop fade over the same;
+ *   items rise 8 px over --dur-ui, 40 ms apart from 60 ms, capped at 6
+ *   slots; the footer takes slot `--menu-count` (≤ 6), so the whole
+ *   sequence ends by 60 + 6 × 40 + 240 = 540 ms (≤ 560). Items are operable
+ *   throughout (opacity never blocks input).
+ * - close: panel and backdrop fade out over --dur-ui (240 ms ≤ 280).
+ * - reduced motion: opacity only over --dur-rmFade (150 ms), no transform,
+ *   no stagger, both directions.
+ */
+@layer components {
+  .menu-trigger,
+  .mobile-menu__close {
+    position: relative;
+    display: grid;
+    place-items: center;
+    box-sizing: border-box;
+    inline-size: 44px;
+    block-size: 44px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--color-ivory-50);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .menu-trigger {
+    visibility: hidden;
+  }
+
+  .site-header__menu[data-menu-ready="true"] > .menu-trigger {
+    visibility: visible;
+  }
+
+  .menu-icon {
+    position: relative;
+    display: block;
+    inline-size: 20px;
+    block-size: 7px;
+  }
+
+  .menu-icon::before,
+  .menu-icon::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    block-size: 1px;
+    background-color: currentColor;
+    transition: transform var(--dur-ui) var(--ease-state);
+  }
+
+  .menu-icon::before {
+    inset-block-start: 0;
+  }
+
+  .menu-icon::after {
+    inset-block-end: 0;
+  }
+
+  .menu-trigger[aria-expanded="true"] > .menu-icon::before,
+  .menu-icon[data-icon="close"]::before {
+    transform: translateY(3px) rotate(45deg);
+  }
+
+  .menu-trigger[aria-expanded="true"] > .menu-icon::after,
+  .menu-icon[data-icon="close"]::after {
+    transform: translateY(-3px) rotate(-45deg);
+  }
+
+  .mobile-menu__backdrop {
+    display: none;
+  }
+
+  .mobile-menu__panel {
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-panel);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    /* vh base; dvh upgrade in the feature query below (Req 17.8). */
+    block-size: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scroll-padding-block: 16px;
+    padding-block-start: env(safe-area-inset-top);
+    padding-block-end: calc(32px + env(safe-area-inset-bottom));
+    padding-inline-start: max(var(--gutter-base), env(safe-area-inset-left));
+    padding-inline-end: max(var(--gutter-base), env(safe-area-inset-right));
+    background-color: var(--color-navy-950);
+    color: var(--color-ivory-50);
+    animation: menu-panel-drop var(--dur-panel) var(--ease-entrance) both;
+  }
+
+  @supports (height: 1dvh) {
+    .mobile-menu__panel {
+      block-size: 100dvh;
+    }
+  }
+
+  .mobile-menu__bar {
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: flex-end;
+    block-size: var(--header-h);
+  }
+
+  .mobile-menu__nav {
+    padding-block: 24px 40px;
+  }
+
+  .mobile-menu__nav .nav-list--menu {
+    row-gap: 0;
+  }
+
+  .mobile-menu__nav .nav-list__item {
+    padding-block: 4px;
+  }
+
+  .mobile-menu__nav .nav-list__item + .nav-list__item {
+    border-block-start: 1px solid color-mix(in srgb, var(--color-ivory-50) 8%, transparent);
+  }
+
+  .mobile-menu__nav .nav-link {
+    justify-content: space-between;
+    gap: 16px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    min-block-size: 64px;
+  }
+
+  /* Row chevron: every row reads as a destination, for touch. */
+  .mobile-menu__nav .nav-link[data-nav-status="live"]::before {
+    content: "";
+    flex: none;
+    order: 2;
+    inline-size: 9px;
+    block-size: 9px;
+    border-inline-end: 1.5px solid color-mix(in srgb, var(--color-ivory-50) 55%, transparent);
+    border-block-start: 1.5px solid color-mix(in srgb, var(--color-ivory-50) 55%, transparent);
+    transform: rotate(45deg);
+  }
+
+  .mobile-menu__nav .nav-link[aria-current="page"]::before {
+    border-color: var(--color-gold-500);
+  }
+
+  /* Current route in the menu: gold rule at the row start, not an underline. */
+  .mobile-menu__nav .nav-link[aria-current="page"]::after {
+    inset-block: 16px;
+    inset-inline: -12px auto;
+    inline-size: 2px;
+    block-size: auto;
+  }
+
+  .mobile-menu__panel {
+    background:
+      radial-gradient(120% 60% at 100% 0%, color-mix(in srgb, var(--color-navy-800) 55%, transparent), transparent 70%),
+      var(--color-navy-950);
+  }
+
+  .mobile-menu__footer {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-block-start: auto;
+    padding-block-start: 32px;
+    border-block-start: 1px solid color-mix(in srgb, var(--color-ivory-50) 8%, transparent);
+  }
+
+  .mobile-menu__cta {
+    inline-size: 100%;
+  }
+
+  .mobile-menu__location {
+    margin: 0;
+    color: var(--color-ivory-300);
+  }
+
+  /* Staggered entrance: slot i starts at 60 + i × 40 ms (capped at slot 5). */
+  .mobile-menu__nav .nav-list__item,
+  .mobile-menu__footer {
+    animation: menu-item-rise var(--dur-ui) var(--ease-entrance) both;
+    animation-delay: calc(60ms + var(--menu-i, 0) * var(--dur-stagger));
+  }
+
+  .mobile-menu__nav .nav-list__item:nth-child(2) { --menu-i: 1; }
+  .mobile-menu__nav .nav-list__item:nth-child(3) { --menu-i: 2; }
+  .mobile-menu__nav .nav-list__item:nth-child(4) { --menu-i: 3; }
+  .mobile-menu__nav .nav-list__item:nth-child(5) { --menu-i: 4; }
+  .mobile-menu__nav .nav-list__item:nth-child(n + 6) { --menu-i: 5; }
+
+  .mobile-menu__footer {
+    --menu-i: var(--menu-count, 6);
+  }
+
+  .mobile-menu__panel[data-phase="closing"],
+  .mobile-menu__backdrop[data-phase="closing"] {
+    animation: menu-fade-out var(--dur-ui) var(--ease-state) both;
+    pointer-events: none;
+  }
+
+  @media (min-width: 48rem) {
+    .mobile-menu__backdrop {
+      display: block;
+      position: fixed;
+      inset: 0;
+      z-index: var(--z-backdrop);
+      background-color: color-mix(in srgb, var(--color-ink-950) 64%, transparent);
+      animation: menu-fade-in var(--dur-panel) var(--ease-state) both;
+    }
+
+    .mobile-menu__panel {
+      inset-inline-start: auto;
+      inline-size: min(420px, 100vw);
+      padding-inline-start: 40px;
+      border-inline-start: 1px solid color-mix(in srgb, var(--color-ivory-50) 8%, transparent);
+      animation-name: menu-panel-slide;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mobile-menu__panel,
+    .mobile-menu__backdrop {
+      animation: menu-fade-in var(--dur-rmFade) linear both;
+    }
+
+    .mobile-menu__panel[data-phase="closing"],
+    .mobile-menu__backdrop[data-phase="closing"] {
+      animation: menu-fade-out var(--dur-rmFade) linear both;
+    }
+
+    .mobile-menu__nav .nav-list__item,
+    .mobile-menu__footer {
+      animation: none;
+    }
+
+    .menu-icon::before,
+    .menu-icon::after {
+      transition: none;
+    }
+  }
+
+  @media (forced-colors: active) {
+    .menu-trigger,
+    .mobile-menu__close {
+      border: 1px solid ButtonText;
+    }
+
+    .menu-icon::before,
+    .menu-icon::after {
+      forced-color-adjust: none;
+      background-color: ButtonText;
+    }
+
+    .menu-trigger:focus-visible,
+    .mobile-menu__close:focus-visible {
+      outline: 2px solid Highlight;
+      outline-offset: 3px;
+    }
+
+    .mobile-menu__panel {
+      border: 1px solid CanvasText;
+    }
+  }
+}
+
+@keyframes menu-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes menu-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes menu-panel-drop {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes menu-panel-slide {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+}
+
+@keyframes menu-item-rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+/*
+ * Intro (task 15.1; design: Motion choreography, K4, K5, D8).
+ * Req 1.8, 9.1, 9.4, 9.5, 9.10, 13.11, 16.1, 17.3.
+ *
+ * CSS keyframes from first paint: no JS, no hydration dependency. Values come
+ * from lib/motion-tokens.ts via the custom properties on <html> (`--dur-*`,
+ * `--delay-*`, `--ease-entrance`, `--dist-*`) and mirror INTRO_TIMELINE:
+ *
+ *   target      from                               delay / duration  settles
+ *   brand       opacity 0                          0   / 240 (ui)     240
+ *   hairline    scale 0 (spine Y from top,         40  / 720 (reveal) 760
+ *               ticks and plinth X from start)
+ *   atmosphere  opacity 0                          80  / 720          800
+ *   emblem      opacity 0.24, scale 0.98 (D8)      120 / 720          840
+ *   headline    translateY 12px, opacity 1 always  160 / 720          880
+ *   copy        opacity 0, translateY 8px          400 / 240 (ui)     640
+ *   cta         opacity 0, translateY 8px          520 / 240          760
+ *
+ * Rules:
+ * - Only `opacity` and `transform` animate (compositor-only; Req 9.1).
+ * - Keyframes declare `from` only; `both` holds the start state through the
+ *   delay and the element's own (final) style is the end state. So the
+ *   no-JS, reduced-motion and settled renders are the same composition.
+ * - The headline never animates opacity, visibility, clip-path or mask (K5):
+ *   it paints at opacity 1 on the first frame and only settles 12 px. It is
+ *   the mobile LCP element.
+ * - The emblem starts at 0.24, not 0, so it is an LCP candidate at its first
+ *   paint on tablet and desktop (D8). Its origin is the anchor
+ *   (`--emblem-origin` on `.emblem-intro`).
+ * - Nothing here touches `pointer-events`, `inert` or `visibility`: CTAs are
+ *   operable during their fade (Req 1.8). The unlayered
+ *   `.cta-group:focus-within { animation: none }` above beats these layered
+ *   rules, so a focused CTA snaps to its final state.
+ * - CSS owns only the `[data-intro]` wrappers. GSAP (task 16.5) owns
+ *   `.emblem-scroll`, `.emblem-parallax`, `.light-parallax` and the specular
+ *   copy, so the two systems never write the same element (Req 13.11).
+ * - Under `prefers-reduced-motion: reduce` (or no preference support) none of
+ *   this applies: the final composition renders at first paint (Req 9.10).
+ * - Played at most once per document (task 17.1, Req 9.11). Every rule is
+ *   scoped to `:root:not([data-intro-done])`. lib/intro-done.ts (called by
+ *   MotionLoader) sets `data-intro-done` on <html> once every intro animation
+ *   has finished, and at once when reduced motion matches, at load or on a
+ *   runtime change. Removing the rules drops the finished `both`-filled
+ *   animations onto the identical final style, so nothing moves. A later
+ *   reduce → no-preference toggle, or a CTA blur after `:focus-within`,
+ *   therefore never restarts the intro. Without JS the attribute is never
+ *   set, so the intro still runs from first paint (Req 17.3).
+ */
+@layer components {
+  @media (prefers-reduced-motion: no-preference) {
+    :root:not([data-intro-done]) {
+      [data-intro="brand"] {
+        animation: intro-fade var(--dur-ui) var(--ease-entrance) var(--delay-brand) both;
+      }
+
+      .hero-framing__spine[data-intro="hairline"] {
+        animation: intro-draw-y var(--dur-reveal) var(--ease-entrance) var(--delay-hairline) both;
+      }
+
+      .hero-framing__tick[data-intro="hairline"],
+      .hero-framing__plinth[data-intro="hairline"] {
+        animation: intro-draw-x var(--dur-reveal) var(--ease-entrance) var(--delay-hairline) both;
+      }
+
+      [data-intro="atmosphere"] {
+        animation: intro-fade var(--dur-reveal) var(--ease-entrance) var(--delay-atmosphere) both;
+      }
+
+      [data-intro="emblem"] {
+        animation: intro-emblem var(--dur-reveal) var(--ease-entrance) var(--delay-emblem) both;
+      }
+
+      [data-intro="headline"] {
+        animation: intro-headline var(--dur-reveal) var(--ease-entrance) var(--delay-headline) both;
+      }
+
+      [data-intro="copy"] {
+        animation: intro-rise var(--dur-ui) var(--ease-entrance) var(--delay-copy) both;
+      }
+
+      [data-intro="cta"] {
+        animation: intro-rise var(--dur-ui) var(--ease-entrance) var(--delay-cta) both;
+      }
+    }
+  }
+}
+
+/*
+ * Reduced motion audit (task 17.1; Req 8.9, 8.10, 9.10, 9.11).
+ *
+ * Every animation and transition in this file, under `reduce`:
+ *
+ *   intro keyframes         not applied (media-gated above): final at first paint
+ *   specular sweep          never armed: HeroMotion spends the sweep under reduce
+ *                           (sweep.ts consumeSweep), the copy stays display: none
+ *   pointer parallax        not attached; gsap.matchMedia reverts inline styles
+ *   mobile menu             opacity-only fade ≤ --dur-rmFade, no stagger, no icon
+ *                           morph (Mobile_Menu section above)
+ *   .btn::before overlay    opacity 160 ms  → --dur-rmFade (150 ms), below
+ *   .nav-link::after        opacity 160 ms  → --dur-rmFade (150 ms), below
+ *   header surface          opacity 240 ms  → --dur-rmFade (150 ms), below; the
+ *                           blur hold matches, so it never pops while visible
+ *
+ * State-change feedback is kept as a short opacity fade (≤ 150 ms, no
+ * movement) rather than removed, matching the menu rule (Req 8.10): an instant
+ * flip is also acceptable, but a brief fade reads as calmer and is not motion.
+ * Press feedback on touch stays instant (its own 0 ms rules win on
+ * specificity). Same layer and later source order, so these override the
+ * base rules without raising specificity.
+ */
+@layer components {
+  @media (prefers-reduced-motion: reduce) {
+    .btn::before,
+    .nav-link::after {
+      transition-duration: var(--dur-rmFade);
+    }
+
+    .site-header__surface {
+      transition:
+        opacity var(--dur-rmFade) linear,
+        backdrop-filter 0s linear var(--dur-rmFade),
+        -webkit-backdrop-filter 0s linear var(--dur-rmFade);
+    }
+
+    .site-header[data-scrolled="true"] .site-header__surface {
+      transition: opacity var(--dur-rmFade) linear;
+    }
+  }
+}
+
+@keyframes intro-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes intro-draw-x {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes intro-draw-y {
+  from {
+    transform: scaleY(0);
+  }
+}
+
+@keyframes intro-emblem {
+  from {
+    opacity: var(--dist-emblemFromOpacity);
+    transform: scale(var(--dist-emblemFromScale));
+  }
+}
+
+/* Transform only: the headline is never faded, clipped or masked (K5). */
+@keyframes intro-headline {
+  from {
+    transform: translateY(var(--dist-headlineRise));
+  }
+}
+
+@keyframes intro-rise {
+  from {
+    opacity: 0;
+    transform: translateY(var(--dist-copyRise));
+  }
+}

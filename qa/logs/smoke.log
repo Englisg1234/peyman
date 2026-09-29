@@ -1,0 +1,6 @@
+﻿Γ£ô success state shown
+Γ£ô row stored with normalised email, interest and source; status left to the database default
+Γ£ô notification webhook called with secret
+Γ£ô no key or secret in any HTML or JS sent to the browser
+Γ£ô storage failure shows the error state and keeps the values
+Γ£ô nothing stored on failure

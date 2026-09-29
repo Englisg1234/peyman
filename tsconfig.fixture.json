@@ -1,0 +1,5 @@
+{
+  "extends": "./tsconfig.json",
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next-fixture/types/**/*.ts", ".next-fixture/dev/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}

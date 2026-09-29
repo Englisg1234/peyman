@@ -1,0 +1,483 @@
+﻿[warm-images] http://127.0.0.1:3100: 28 derivatives warmed
+[warm-images] http://127.0.0.1:3101: 28 derivatives warmed
+
+Running 415 tests using 2 workers
+
+[1/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:195:9 ΓÇ║ Hero composition at 320x568 ΓÇ║ paints only emblem derivatives: no canvas, WebGL, SVG or other images (Req 2.6, 4.9)
+[2/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:276:9 ΓÇ║ Hero composition at 320x568 ΓÇ║ no backdrop-filter or text-shadow; gradients within budget (Req 2.2, 4.7)
+[3/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:309:9 ΓÇ║ Hero composition at 320x568 ΓÇ║ every painted color is a Palette token (Req 4.1, 4.8, 4.9)
+[4/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:332:9 ΓÇ║ Hero composition at 320x568 ΓÇ║ hairlines are 1px, decorative, text-free and clear of text; one gold hairline (Req 2.5, 2.7, 4.3)
+[5/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:415:9 ΓÇ║ Hero composition at 320x568 ΓÇ║ layers stay inside the Hero; no horizontal overflow; emblem clear of text (Req 2.6, 2.7, 5.4)
+[6/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:458:9 ΓÇ║ Hero composition at 320x568 ΓÇ║ forced colors: decoration hidden, emblem kept, CTAs bordered (Req 12.8)
+[7/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:195:9 ΓÇ║ Hero composition at 360x640 ΓÇ║ paints only emblem derivatives: no canvas, WebGL, SVG or other images (Req 2.6, 4.9)
+[8/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:276:9 ΓÇ║ Hero composition at 360x640 ΓÇ║ no backdrop-filter or text-shadow; gradients within budget (Req 2.2, 4.7)
+[9/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:309:9 ΓÇ║ Hero composition at 360x640 ΓÇ║ every painted color is a Palette token (Req 4.1, 4.8, 4.9)
+[10/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:332:9 ΓÇ║ Hero composition at 360x640 ΓÇ║ hairlines are 1px, decorative, text-free and clear of text; one gold hairline (Req 2.5, 2.7, 4.3)
+[11/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:415:9 ΓÇ║ Hero composition at 360x640 ΓÇ║ layers stay inside the Hero; no horizontal overflow; emblem clear of text (Req 2.6, 2.7, 5.4)
+[12/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:458:9 ΓÇ║ Hero composition at 360x640 ΓÇ║ forced colors: decoration hidden, emblem kept, CTAs bordered (Req 12.8)
+[13/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:195:9 ΓÇ║ Hero composition at 375x667 ΓÇ║ paints only emblem derivatives: no canvas, WebGL, SVG or other images (Req 2.6, 4.9)
+[14/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:276:9 ΓÇ║ Hero composition at 375x667 ΓÇ║ no backdrop-filter or text-shadow; gradients within budget (Req 2.2, 4.7)
+[15/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:309:9 ΓÇ║ Hero composition at 375x667 ΓÇ║ every painted color is a Palette token (Req 4.1, 4.8, 4.9)
+[16/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:332:9 ΓÇ║ Hero composition at 375x667 ΓÇ║ hairlines are 1px, decorative, text-free and clear of text; one gold hairline (Req 2.5, 2.7, 4.3)
+[17/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:415:9 ΓÇ║ Hero composition at 375x667 ΓÇ║ layers stay inside the Hero; no horizontal overflow; emblem clear of text (Req 2.6, 2.7, 5.4)
+[18/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:458:9 ΓÇ║ Hero composition at 375x667 ΓÇ║ forced colors: decoration hidden, emblem kept, CTAs bordered (Req 12.8)
+[19/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:195:9 ΓÇ║ Hero composition at 390x844 ΓÇ║ paints only emblem derivatives: no canvas, WebGL, SVG or other images (Req 2.6, 4.9)
+[20/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:276:9 ΓÇ║ Hero composition at 390x844 ΓÇ║ no backdrop-filter or text-shadow; gradients within budget (Req 2.2, 4.7)
+[21/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:309:9 ΓÇ║ Hero composition at 390x844 ΓÇ║ every painted color is a Palette token (Req 4.1, 4.8, 4.9)
+[22/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:332:9 ΓÇ║ Hero composition at 390x844 ΓÇ║ hairlines are 1px, decorative, text-free and clear of text; one gold hairline (Req 2.5, 2.7, 4.3)
+[23/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:415:9 ΓÇ║ Hero composition at 390x844 ΓÇ║ layers stay inside the Hero; no horizontal overflow; emblem clear of text (Req 2.6, 2.7, 5.4)
+[24/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:458:9 ΓÇ║ Hero composition at 390x844 ΓÇ║ forced colors: decoration hidden, emblem kept, CTAs bordered (Req 12.8)
+[25/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:195:9 ΓÇ║ Hero composition at 414x896 ΓÇ║ paints only emblem derivatives: no canvas, WebGL, SVG or other images (Req 2.6, 4.9)
+[26/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:276:9 ΓÇ║ Hero composition at 414x896 ΓÇ║ no backdrop-filter or text-shadow; gradients within budget (Req 2.2, 4.7)
+[27/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:309:9 ΓÇ║ Hero composition at 414x896 ΓÇ║ every painted color is a Palette token (Req 4.1, 4.8, 4.9)
+[28/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:332:9 ΓÇ║ Hero composition at 414x896 ΓÇ║ hairlines are 1px, decorative, text-free and clear of text; one gold hairline (Req 2.5, 2.7, 4.3)
+[29/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:415:9 ΓÇ║ Hero composition at 414x896 ΓÇ║ layers stay inside the Hero; no horizontal overflow; emblem clear of text (Req 2.6, 2.7, 5.4)
+[30/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:458:9 ΓÇ║ Hero composition at 414x896 ΓÇ║ forced colors: decoration hidden, emblem kept, CTAs bordered (Req 12.8)
+[31/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:195:9 ΓÇ║ Hero composition at 667x375 ΓÇ║ paints only emblem derivatives: no canvas, WebGL, SVG or other images (Req 2.6, 4.9)
+[32/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:276:9 ΓÇ║ Hero composition at 667x375 ΓÇ║ no backdrop-filter or text-shadow; gradients within budget (Req 2.2, 4.7)
+[33/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:309:9 ΓÇ║ Hero composition at 667x375 ΓÇ║ every painted color is a Palette token (Req 4.1, 4.8, 4.9)
+[34/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:332:9 ΓÇ║ Hero composition at 667x375 ΓÇ║ hairlines are 1px, decorative, text-free and clear of text; one gold hairline (Req 2.5, 2.7, 4.3)
+[35/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:415:9 ΓÇ║ Hero composition at 667x375 ΓÇ║ layers stay inside the Hero; no horizontal overflow; emblem clear of text (Req 2.6, 2.7, 5.4)
+[36/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:458:9 ΓÇ║ Hero composition at 667x375 ΓÇ║ forced colors: decoration hidden, emblem kept, CTAs bordered (Req 12.8)
+[37/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:195:9 ΓÇ║ Hero composition at 844x390 ΓÇ║ paints only emblem derivatives: no canvas, WebGL, SVG or other images (Req 2.6, 4.9)
+[38/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:276:9 ΓÇ║ Hero composition at 844x390 ΓÇ║ no backdrop-filter or text-shadow; gradients within budget (Req 2.2, 4.7)
+[39/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:309:9 ΓÇ║ Hero composition at 844x390 ΓÇ║ every painted color is a Palette token (Req 4.1, 4.8, 4.9)
+[40/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:332:9 ΓÇ║ Hero composition at 844x390 ΓÇ║ hairlines are 1px, decorative, text-free and clear of text; one gold hairline (Req 2.5, 2.7, 4.3)
+[41/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:415:9 ΓÇ║ Hero composition at 844x390 ΓÇ║ layers stay inside the Hero; no horizontal overflow; emblem clear of text (Req 2.6, 2.7, 5.4)
+[42/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:458:9 ΓÇ║ Hero composition at 844x390 ΓÇ║ forced colors: decoration hidden, emblem kept, CTAs bordered (Req 12.8)
+[43/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:195:9 ΓÇ║ Hero composition at 768x1024 ΓÇ║ paints only emblem derivatives: no canvas, WebGL, SVG or other images (Req 2.6, 4.9)
+[44/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:276:9 ΓÇ║ Hero composition at 768x1024 ΓÇ║ no backdrop-filter or text-shadow; gradients within budget (Req 2.2, 4.7)
+[45/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:309:9 ΓÇ║ Hero composition at 768x1024 ΓÇ║ every painted color is a Palette token (Req 4.1, 4.8, 4.9)
+[46/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:332:9 ΓÇ║ Hero composition at 768x1024 ΓÇ║ hairlines are 1px, decorative, text-free and clear of text; one gold hairline (Req 2.5, 2.7, 4.3)
+[47/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:415:9 ΓÇ║ Hero composition at 768x1024 ΓÇ║ layers stay inside the Hero; no horizontal overflow; emblem clear of text (Req 2.6, 2.7, 5.4)
+[48/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:458:9 ΓÇ║ Hero composition at 768x1024 ΓÇ║ forced colors: decoration hidden, emblem kept, CTAs bordered (Req 12.8)
+[49/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:195:9 ΓÇ║ Hero composition at 1024x768 ΓÇ║ paints only emblem derivatives: no canvas, WebGL, SVG or other images (Req 2.6, 4.9)
+[50/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:276:9 ΓÇ║ Hero composition at 1024x768 ΓÇ║ no backdrop-filter or text-shadow; gradients within budget (Req 2.2, 4.7)
+[51/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:309:9 ΓÇ║ Hero composition at 1024x768 ΓÇ║ every painted color is a Palette token (Req 4.1, 4.8, 4.9)
+[52/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:332:9 ΓÇ║ Hero composition at 1024x768 ΓÇ║ hairlines are 1px, decorative, text-free and clear of text; one gold hairline (Req 2.5, 2.7, 4.3)
+[53/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:415:9 ΓÇ║ Hero composition at 1024x768 ΓÇ║ layers stay inside the Hero; no horizontal overflow; emblem clear of text (Req 2.6, 2.7, 5.4)
+[54/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:458:9 ΓÇ║ Hero composition at 1024x768 ΓÇ║ forced colors: decoration hidden, emblem kept, CTAs bordered (Req 12.8)
+[55/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:195:9 ΓÇ║ Hero composition at 1024x1366 ΓÇ║ paints only emblem derivatives: no canvas, WebGL, SVG or other images (Req 2.6, 4.9)
+[56/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:276:9 ΓÇ║ Hero composition at 1024x1366 ΓÇ║ no backdrop-filter or text-shadow; gradients within budget (Req 2.2, 4.7)
+[57/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:309:9 ΓÇ║ Hero composition at 1024x1366 ΓÇ║ every painted color is a Palette token (Req 4.1, 4.8, 4.9)
+[58/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:332:9 ΓÇ║ Hero composition at 1024x1366 ΓÇ║ hairlines are 1px, decorative, text-free and clear of text; one gold hairline (Req 2.5, 2.7, 4.3)
+[59/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:415:9 ΓÇ║ Hero composition at 1024x1366 ΓÇ║ layers stay inside the Hero; no horizontal overflow; emblem clear of text (Req 2.6, 2.7, 5.4)
+[60/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:458:9 ΓÇ║ Hero composition at 1024x1366 ΓÇ║ forced colors: decoration hidden, emblem kept, CTAs bordered (Req 12.8)
+[61/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:195:9 ΓÇ║ Hero composition at 1280x800 ΓÇ║ paints only emblem derivatives: no canvas, WebGL, SVG or other images (Req 2.6, 4.9)
+[62/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:276:9 ΓÇ║ Hero composition at 1280x800 ΓÇ║ no backdrop-filter or text-shadow; gradients within budget (Req 2.2, 4.7)
+[63/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:309:9 ΓÇ║ Hero composition at 1280x800 ΓÇ║ every painted color is a Palette token (Req 4.1, 4.8, 4.9)
+[64/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:332:9 ΓÇ║ Hero composition at 1280x800 ΓÇ║ hairlines are 1px, decorative, text-free and clear of text; one gold hairline (Req 2.5, 2.7, 4.3)
+[65/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:415:9 ΓÇ║ Hero composition at 1280x800 ΓÇ║ layers stay inside the Hero; no horizontal overflow; emblem clear of text (Req 2.6, 2.7, 5.4)
+[66/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:458:9 ΓÇ║ Hero composition at 1280x800 ΓÇ║ forced colors: decoration hidden, emblem kept, CTAs bordered (Req 12.8)
+[67/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:195:9 ΓÇ║ Hero composition at 1440x900 ΓÇ║ paints only emblem derivatives: no canvas, WebGL, SVG or other images (Req 2.6, 4.9)
+[68/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:276:9 ΓÇ║ Hero composition at 1440x900 ΓÇ║ no backdrop-filter or text-shadow; gradients within budget (Req 2.2, 4.7)
+[69/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:309:9 ΓÇ║ Hero composition at 1440x900 ΓÇ║ every painted color is a Palette token (Req 4.1, 4.8, 4.9)
+[70/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:332:9 ΓÇ║ Hero composition at 1440x900 ΓÇ║ hairlines are 1px, decorative, text-free and clear of text; one gold hairline (Req 2.5, 2.7, 4.3)
+[71/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:415:9 ΓÇ║ Hero composition at 1440x900 ΓÇ║ layers stay inside the Hero; no horizontal overflow; emblem clear of text (Req 2.6, 2.7, 5.4)
+[72/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:458:9 ΓÇ║ Hero composition at 1440x900 ΓÇ║ forced colors: decoration hidden, emblem kept, CTAs bordered (Req 12.8)
+[73/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:195:9 ΓÇ║ Hero composition at 1920x1080 ΓÇ║ paints only emblem derivatives: no canvas, WebGL, SVG or other images (Req 2.6, 4.9)
+[74/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:276:9 ΓÇ║ Hero composition at 1920x1080 ΓÇ║ no backdrop-filter or text-shadow; gradients within budget (Req 2.2, 4.7)
+[75/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:309:9 ΓÇ║ Hero composition at 1920x1080 ΓÇ║ every painted color is a Palette token (Req 4.1, 4.8, 4.9)
+[76/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:332:9 ΓÇ║ Hero composition at 1920x1080 ΓÇ║ hairlines are 1px, decorative, text-free and clear of text; one gold hairline (Req 2.5, 2.7, 4.3)
+[77/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:415:9 ΓÇ║ Hero composition at 1920x1080 ΓÇ║ layers stay inside the Hero; no horizontal overflow; emblem clear of text (Req 2.6, 2.7, 5.4)
+[78/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:458:9 ΓÇ║ Hero composition at 1920x1080 ΓÇ║ forced colors: decoration hidden, emblem kept, CTAs bordered (Req 12.8)
+[79/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:195:9 ΓÇ║ Hero composition at 1920x1080@2x ΓÇ║ paints only emblem derivatives: no canvas, WebGL, SVG or other images (Req 2.6, 4.9)
+[80/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:276:9 ΓÇ║ Hero composition at 1920x1080@2x ΓÇ║ no backdrop-filter or text-shadow; gradients within budget (Req 2.2, 4.7)
+[81/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:309:9 ΓÇ║ Hero composition at 1920x1080@2x ΓÇ║ every painted color is a Palette token (Req 4.1, 4.8, 4.9)
+[82/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:332:9 ΓÇ║ Hero composition at 1920x1080@2x ΓÇ║ hairlines are 1px, decorative, text-free and clear of text; one gold hairline (Req 2.5, 2.7, 4.3)
+[83/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:415:9 ΓÇ║ Hero composition at 1920x1080@2x ΓÇ║ layers stay inside the Hero; no horizontal overflow; emblem clear of text (Req 2.6, 2.7, 5.4)
+[84/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:458:9 ΓÇ║ Hero composition at 1920x1080@2x ΓÇ║ forced colors: decoration hidden, emblem kept, CTAs bordered (Req 12.8)
+[85/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:195:9 ΓÇ║ Hero composition at 3840x2160 ΓÇ║ paints only emblem derivatives: no canvas, WebGL, SVG or other images (Req 2.6, 4.9)
+[86/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:276:9 ΓÇ║ Hero composition at 3840x2160 ΓÇ║ no backdrop-filter or text-shadow; gradients within budget (Req 2.2, 4.7)
+[87/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:309:9 ΓÇ║ Hero composition at 3840x2160 ΓÇ║ every painted color is a Palette token (Req 4.1, 4.8, 4.9)
+[88/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:332:9 ΓÇ║ Hero composition at 3840x2160 ΓÇ║ hairlines are 1px, decorative, text-free and clear of text; one gold hairline (Req 2.5, 2.7, 4.3)
+[89/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:415:9 ΓÇ║ Hero composition at 3840x2160 ΓÇ║ layers stay inside the Hero; no horizontal overflow; emblem clear of text (Req 2.6, 2.7, 5.4)
+[90/415] [chromium] ΓÇ║ tests\e2e\composition.spec.ts:458:9 ΓÇ║ Hero composition at 3840x2160 ΓÇ║ forced colors: decoration hidden, emblem kept, CTAs bordered (Req 12.8)
+[91/415] [chromium] ΓÇ║ tests\e2e\fallbacks.spec.ts:211:7 ΓÇ║ emblem 404 at 1440x900 ΓÇ║ same box, CLS 0, no sweep; placeholder cover, vignette and pool kept; no alt text (Req 17.1)
+[92/415] [chromium] ΓÇ║ tests\e2e\fallbacks.spec.ts:291:9 ΓÇ║ thumbnail 404 at 390x844 ΓÇ║ header height, thumbnail box and wordmark position unchanged; link intact (Req 17.2)
+[93/415] [chromium] ΓÇ║ tests\e2e\fallbacks.spec.ts:291:9 ΓÇ║ thumbnail 404 at 1440x900 ΓÇ║ header height, thumbnail box and wordmark position unchanged; link intact (Req 17.2)
+[94/415] [chromium] ΓÇ║ tests\e2e\fallbacks.spec.ts:334:9 ΓÇ║ font 404 at 320x568 ΓÇ║ same line counts and visible text with the size-adjusted fallback (Req 16.3, 16.7)
+[95/415] [chromium] ΓÇ║ tests\e2e\fallbacks.spec.ts:334:9 ΓÇ║ font 404 at 1440x900 ΓÇ║ same line counts and visible text with the size-adjusted fallback (Req 16.3, 16.7)
+[96/415] [chromium] ΓÇ║ tests\e2e\fallbacks.spec.ts:382:9 ΓÇ║ no JS at 390x844 ΓÇ║ JS disabled: the static final composition after the CSS intro; CTAs are links (Req 17.3)
+[97/415] [chromium] ΓÇ║ tests\e2e\fallbacks.spec.ts:406:9 ΓÇ║ no JS at 390x844 ΓÇ║ every app chunk aborted: the same static composition, no uncaught error (Req 17.3)
+[98/415] [chromium] ΓÇ║ tests\e2e\fallbacks.spec.ts:382:9 ΓÇ║ no JS at 1440x900 ΓÇ║ JS disabled: the static final composition after the CSS intro; CTAs are links (Req 17.3)
+[99/415] [chromium] ΓÇ║ tests\e2e\fallbacks.spec.ts:406:9 ΓÇ║ no JS at 1440x900 ΓÇ║ every app chunk aborted: the same static composition, no uncaught error (Req 17.3)
+[100/415] [chromium] ΓÇ║ tests\e2e\fallbacks.spec.ts:460:7 ΓÇ║ motion chunk at 1440x900 ΓÇ║ abort: static final composition, no sweep, no uncaught error (Req 17.7)
+[101/415] [chromium] ΓÇ║ tests\e2e\fallbacks.spec.ts:478:7 ΓÇ║ motion chunk at 1440x900 ΓÇ║ delay 2000 ms: no sweep, the composition is unchanged (Req 16.8)
+[102/415] [chromium] ΓÇ║ tests\e2e\fallbacks.spec.ts:502:7 ΓÇ║ compiled CSS fallbacks ΓÇ║ @supports fallbacks for backdrop-filter, mask-image and svh exist (Req 17.8ΓÇô17.10)
+[103/415] [chromium] ΓÇ║ tests\e2e\header.spec.ts:48:9 ΓÇ║ Site_Header at 320x568 ΓÇ║ is fixed at 64px tall with no horizontal overflow (Req 7.2, 12.11)
+[104/415] [chromium] ΓÇ║ tests\e2e\header.spec.ts:78:9 ΓÇ║ Site_Header at 320x568 ΓÇ║ renders the live nav behind the menu trigger
+[105/415] [chromium] ΓÇ║ tests\e2e\header.spec.ts:93:9 ΓÇ║ Site_Header at 320x568 ΓÇ║ Brand_Mark has one accessible name and aria-current on / (Req 7.11)
+[106/415] [chromium] ΓÇ║ tests\e2e\header.spec.ts:106:9 ΓÇ║ Site_Header at 320x568 ΓÇ║ header CTA is hidden (Req 7.6, 7.7)
+[107/415] [chromium] ΓÇ║ tests\e2e\header.spec.ts:48:9 ΓÇ║ Site_Header at 390x844 ΓÇ║ is fixed at 64px tall with no horizontal overflow (Req 7.2, 12.11)
+[108/415] [chromium] ΓÇ║ tests\e2e\header.spec.ts:93:9 ΓÇ║ Site_Header at 390x844 ΓÇ║ Brand_Mark has one accessible name and aria-current on / (Req 7.11)
+[109/415] [chromium] ΓÇ║ tests\e2e\header.spec.ts:78:9 ΓÇ║ Site_Header at 390x844 ΓÇ║ renders the live nav behind the menu trigger
+[110/415] [chromium] ΓÇ║ tests\e2e\header.spec.ts:106:9 ΓÇ║ Site_Header at 390x844 ΓÇ║ header CTA is hidden (Req 7.6, 7.7)
+[111/415] [chromium] ΓÇ║ tests\e2e\header.spec.ts:48:9 ΓÇ║ Site_Header at 768x1024 ΓÇ║ is fixed at 64px tall with no horizontal overflow (Req 7.2, 12.11)
+[112/415] [chromium] ΓÇ║ tests\e2e\header.spec.ts:78:9 ΓÇ║ Site_Header at 768x1024 ΓÇ║ renders the live nav behind the menu trigger
+[113/415] [chromium] ΓÇ║ tests\e2e\header.spec.ts:93:9 ΓÇ║ Site_Header at 768x1024 ΓÇ║ Brand_Mark has one accessible name and aria-current on / (Req 7.11)
+[114/415] [chromium] ΓÇ║ tests\e2e\header.spec.ts:106:9 ΓÇ║ Site_Header at 768x1024 ΓÇ║ header CTA is visible (Req 7.6, 7.7)
+[115/415] [chromium] ΓÇ║ tests\e2e\header.spec.ts:48:9 ΓÇ║ Site_Header at 667x375 ΓÇ║ is fixed at 56px tall with no horizontal overflow (Req 7.2, 12.11)
+[116/415] [chromium] ΓÇ║ tests\e2e\header.spec.ts:78:9 ΓÇ║ Site_Header at 667x375 ΓÇ║ renders the live nav behind the menu trigger
+[117/415] [chromium] ΓÇ║ tests\e2e\header.spec.ts:93:9 ΓÇ║ Site_Header at 667x375 ΓÇ║ Brand_Mark has one accessible name and aria-current on / (Req 7.11)
+[118/415] [chromium] ΓÇ║ tests\e2e\header.spec.ts:106:9 ΓÇ║ Site_Header at 667x375 ΓÇ║ header CTA is hidden (Req 7.6, 7.7)
+[119/415] [chromium] ΓÇ║ tests\e2e\header.spec.ts:48:9 ΓÇ║ Site_Header at 844x390 ΓÇ║ is fixed at 56px tall with no horizontal overflow (Req 7.2, 12.11)
+[120/415] [chromium] ΓÇ║ tests\e2e\header.spec.ts:78:9 ΓÇ║ Site_Header at 844x390 ΓÇ║ renders the live nav behind the menu trigger
+[121/415] [chromium] ΓÇ║ tests\e2e\header.spec.ts:93:9 ΓÇ║ Site_Header at 844x390 ΓÇ║ Brand_Mark has one accessible name and aria-current on / (Req 7.11)
+[122/415] [chromium] ΓÇ║ tests\e2e\header.spec.ts:106:9 ΓÇ║ Site_Header at 844x390 ΓÇ║ header CTA is visible (Req 7.6, 7.7)
+[123/415] [chromium] ΓÇ║ tests\e2e\header.spec.ts:48:9 ΓÇ║ Site_Header at 1024x768 ΓÇ║ is fixed at 72px tall with no horizontal overflow (Req 7.2, 12.11)
+[124/415] [chromium] ΓÇ║ tests\e2e\header.spec.ts:78:9 ΓÇ║ Site_Header at 1024x768 ΓÇ║ renders the live nav behind the menu trigger
+[125/415] [chromium] ΓÇ║ tests\e2e\header.spec.ts:93:9 ΓÇ║ Site_Header at 1024x768 ΓÇ║ Brand_Mark has one accessible name and aria-current on / (Req 7.11)
+[126/415] [chromium] ΓÇ║ tests\e2e\header.spec.ts:106:9 ΓÇ║ Site_Header at 1024x768 ΓÇ║ header CTA is visible (Req 7.6, 7.7)
+[127/415] [chromium] ΓÇ║ tests\e2e\header.spec.ts:48:9 ΓÇ║ Site_Header at 1440x900 ΓÇ║ is fixed at 72px tall with no horizontal overflow (Req 7.2, 12.11)
+[128/415] [chromium] ΓÇ║ tests\e2e\header.spec.ts:78:9 ΓÇ║ Site_Header at 1440x900 ΓÇ║ renders the live nav inline
+[129/415] [chromium] ΓÇ║ tests\e2e\header.spec.ts:93:9 ΓÇ║ Site_Header at 1440x900 ΓÇ║ Brand_Mark has one accessible name and aria-current on / (Req 7.11)
+[130/415] [chromium] ΓÇ║ tests\e2e\header.spec.ts:106:9 ΓÇ║ Site_Header at 1440x900 ΓÇ║ header CTA is visible (Req 7.6, 7.7)
+[131/415] [chromium] ΓÇ║ tests\e2e\header.spec.ts:48:9 ΓÇ║ Site_Header at 1920x1080 ΓÇ║ is fixed at 72px tall with no horizontal overflow (Req 7.2, 12.11)
+[132/415] [chromium] ΓÇ║ tests\e2e\header.spec.ts:78:9 ΓÇ║ Site_Header at 1920x1080 ΓÇ║ renders the live nav inline
+[133/415] [chromium] ΓÇ║ tests\e2e\header.spec.ts:93:9 ΓÇ║ Site_Header at 1920x1080 ΓÇ║ Brand_Mark has one accessible name and aria-current on / (Req 7.11)
+[134/415] [chromium] ΓÇ║ tests\e2e\header.spec.ts:106:9 ΓÇ║ Site_Header at 1920x1080 ΓÇ║ header CTA is visible (Req 7.6, 7.7)
+[135/415] [chromium] ΓÇ║ tests\e2e\header.spec.ts:129:7 ΓÇ║ Site_Header scroll state (Req 7.3, 7.4) ΓÇ║ switches at 25px and back at 24px; height stays constant
+[136/415] [chromium] ΓÇ║ tests\e2e\header.spec.ts:177:9 ΓÇ║ Skip link at 320x568 (Req 7.14, 7.15) ΓÇ║ is hidden until focused, first in tab order, and moves focus to main
+[137/415] [chromium] ΓÇ║ tests\e2e\header.spec.ts:177:9 ΓÇ║ Skip link at 1440x900 (Req 7.14, 7.15) ΓÇ║ is hidden until focused, first in tab order, and moves focus to main
+[138/415] [chromium] ΓÇ║ tests\e2e\images.spec.ts:82:7 ΓÇ║ Image optimizer ΓÇ║ derivative budgets: every srcset candidate is served within Req 13.6 (Req 5.5, 13.6)
+[139/415] [chromium] ΓÇ║ tests\e2e\images.spec.ts:95:11 ΓÇ║ Selected candidates (Req 5.2, 5.5, 13.6) ΓÇ║ at 320x568 ΓÇ║ hero emblem and Brand_Mark candidates, budget and preload
+[140/415] [chromium] ΓÇ║ tests\e2e\images.spec.ts:95:11 ΓÇ║ Selected candidates (Req 5.2, 5.5, 13.6) ΓÇ║ at 390x844@3x ΓÇ║ hero emblem and Brand_Mark candidates, budget and preload
+[141/415] [chromium] ΓÇ║ tests\e2e\images.spec.ts:95:11 ΓÇ║ Selected candidates (Req 5.2, 5.5, 13.6) ΓÇ║ at 667x375 ΓÇ║ hero emblem and Brand_Mark candidates, budget and preload
+[142/415] [chromium] ΓÇ║ tests\e2e\images.spec.ts:95:11 ΓÇ║ Selected candidates (Req 5.2, 5.5, 13.6) ΓÇ║ at 768x1024 ΓÇ║ hero emblem and Brand_Mark candidates, budget and preload
+[143/415] [chromium] ΓÇ║ tests\e2e\images.spec.ts:95:11 ΓÇ║ Selected candidates (Req 5.2, 5.5, 13.6) ΓÇ║ at 1440x900 ΓÇ║ hero emblem and Brand_Mark candidates, budget and preload
+[144/415] [chromium] ΓÇ║ tests\e2e\images.spec.ts:95:11 ΓÇ║ Selected candidates (Req 5.2, 5.5, 13.6) ΓÇ║ at 1920x1080@2x ΓÇ║ hero emblem and Brand_Mark candidates, budget and preload
+[145/415] [chromium] ΓÇ║ tests\e2e\images.spec.ts:95:11 ΓÇ║ Selected candidates (Req 5.2, 5.5, 13.6) ΓÇ║ at 3840x2160 ΓÇ║ hero emblem and Brand_Mark candidates, budget and preload
+[146/415] [chromium] ΓÇ║ tests\e2e\images.spec.ts:170:11 ΓÇ║ Reserved emblem box (Req 16.2) ΓÇ║ at 390x844 ΓÇ║ reserved box and CLS 0 while the emblem is delayed
+[147/415] [chromium] ΓÇ║ tests\e2e\images.spec.ts:170:11 ΓÇ║ Reserved emblem box (Req 16.2) ΓÇ║ at 1440x900 ΓÇ║ reserved box and CLS 0 while the emblem is delayed
+[148/415] [chromium] ΓÇ║ tests\e2e\intro.spec.ts:244:9 ΓÇ║ opening state at 390x844 ΓÇ║ every sampled frame: headline at opacity 1, rise Γëñ 12 px; CTAs operable; settled by 900 ms (Req 1.8, 9.4, 9.5, 16.1)
+[149/415] [chromium] ΓÇ║ tests\e2e\intro.spec.ts:296:9 ΓÇ║ opening state at 390x844 ΓÇ║ intro animates only transform and opacity with INTRO_TIMELINE timing (Req 9.1, 9.3, 9.5)
+[150/415] [chromium] ΓÇ║ tests\e2e\intro.spec.ts:378:9 ΓÇ║ opening state at 390x844 ΓÇ║ start state: emblem 0.24 / scale 0.98, headline +12 px at opacity 1, CTAs at 0 (Req 9.5, D8)
+[151/415] [chromium] ΓÇ║ tests\e2e\intro.spec.ts:412:9 ΓÇ║ opening state at 390x844 ΓÇ║ Primary_CTA focused at 550 ms snaps to opacity 1 and activates (Req 1.8)
+[152/415] [chromium] ΓÇ║ tests\e2e\intro.spec.ts:450:9 ΓÇ║ opening state at 390x844 ΓÇ║ Primary_CTA is clickable from 100 ms, before its fade (Req 1.8)
+[153/415] [chromium] ΓÇ║ tests\e2e\intro.spec.ts:485:9 ΓÇ║ opening state at 390x844 ΓÇ║ LCP is the headline within 150 ms of FCP (median of 3 loads; Req 9.4)
+[154/415] [chromium] ΓÇ║ tests\e2e\intro.spec.ts:244:9 ΓÇ║ opening state at 1440x900 ΓÇ║ every sampled frame: headline at opacity 1, rise Γëñ 12 px; CTAs operable; settled by 900 ms (Req 1.8, 9.4, 9.5, 16.1)
+[155/415] [chromium] ΓÇ║ tests\e2e\intro.spec.ts:296:9 ΓÇ║ opening state at 1440x900 ΓÇ║ intro animates only transform and opacity with INTRO_TIMELINE timing (Req 9.1, 9.3, 9.5)
+[156/415] [chromium] ΓÇ║ tests\e2e\intro.spec.ts:378:9 ΓÇ║ opening state at 1440x900 ΓÇ║ start state: emblem 0.24 / scale 0.98, headline +12 px at opacity 1, CTAs at 0 (Req 9.5, D8)
+[157/415] [chromium] ΓÇ║ tests\e2e\intro.spec.ts:412:9 ΓÇ║ opening state at 1440x900 ΓÇ║ Primary_CTA focused at 550 ms snaps to opacity 1 and activates (Req 1.8)
+[158/415] [chromium] ΓÇ║ tests\e2e\intro.spec.ts:450:9 ΓÇ║ opening state at 1440x900 ΓÇ║ Primary_CTA is clickable from 100 ms, before its fade (Req 1.8)
+[159/415] [chromium] ΓÇ║ tests\e2e\intro.spec.ts:485:9 ΓÇ║ opening state at 1440x900 ΓÇ║ LCP is the emblem or headline within 150 ms of FCP (median of 3 loads; Req 9.4)
+[160/415] [chromium] ΓÇ║ tests\e2e\intro.spec.ts:535:9 ΓÇ║ reduced motion at 390x844 ΓÇ║ no intro animation: final composition from first paint (Req 9.10)
+[161/415] [chromium] ΓÇ║ tests\e2e\intro.spec.ts:561:9 ΓÇ║ JavaScript disabled at 390x844 ΓÇ║ the CSS intro runs and ends in the reduced-motion composition (Req 9.5, 17.3)
+[162/415] [chromium] ΓÇ║ tests\e2e\intro.spec.ts:535:9 ΓÇ║ reduced motion at 1440x900 ΓÇ║ no intro animation: final composition from first paint (Req 9.10)
+[163/415] [chromium] ΓÇ║ tests\e2e\intro.spec.ts:561:9 ΓÇ║ JavaScript disabled at 1440x900 ΓÇ║ the CSS intro runs and ends in the reduced-motion composition (Req 9.5, 17.3)
+[164/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:135:11 ΓÇ║ Hero layout conformance at 320x568 ΓÇ║ default motion: rects match computeHeroLayout within 1 px; 5-line headline
+[165/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:135:11 ΓÇ║ Hero layout conformance at 320x568 ΓÇ║ reduced motion: rects match computeHeroLayout within 1 px; 5-line headline
+[166/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:173:9 ΓÇ║ Hero layout conformance at 320x568 ΓÇ║ web font blocked: same line count, headline height within 2% (Req 16.3)
+[167/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:135:11 ΓÇ║ Hero layout conformance at 360x640 ΓÇ║ default motion: rects match computeHeroLayout within 1 px; 5-line headline
+[168/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:135:11 ΓÇ║ Hero layout conformance at 360x640 ΓÇ║ reduced motion: rects match computeHeroLayout within 1 px; 5-line headline
+[169/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:173:9 ΓÇ║ Hero layout conformance at 360x640 ΓÇ║ web font blocked: same line count, headline height within 2% (Req 16.3)
+[170/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:135:11 ΓÇ║ Hero layout conformance at 375x667 ΓÇ║ default motion: rects match computeHeroLayout within 1 px; 4-line headline
+[171/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:135:11 ΓÇ║ Hero layout conformance at 375x667 ΓÇ║ reduced motion: rects match computeHeroLayout within 1 px; 4-line headline
+[172/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:173:9 ΓÇ║ Hero layout conformance at 375x667 ΓÇ║ web font blocked: same line count, headline height within 2% (Req 16.3)
+[173/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:135:11 ΓÇ║ Hero layout conformance at 390x844 ΓÇ║ default motion: rects match computeHeroLayout within 1 px; 4-line headline
+[174/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:135:11 ΓÇ║ Hero layout conformance at 390x844 ΓÇ║ reduced motion: rects match computeHeroLayout within 1 px; 4-line headline
+[175/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:173:9 ΓÇ║ Hero layout conformance at 390x844 ΓÇ║ web font blocked: same line count, headline height within 2% (Req 16.3)
+[176/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:135:11 ΓÇ║ Hero layout conformance at 414x896 ΓÇ║ default motion: rects match computeHeroLayout within 1 px; 4-line headline
+[177/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:135:11 ΓÇ║ Hero layout conformance at 414x896 ΓÇ║ reduced motion: rects match computeHeroLayout within 1 px; 4-line headline
+[178/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:173:9 ΓÇ║ Hero layout conformance at 414x896 ΓÇ║ web font blocked: same line count, headline height within 2% (Req 16.3)
+[179/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:135:11 ΓÇ║ Hero layout conformance at 667x375 ΓÇ║ default motion: rects match computeHeroLayout within 1 px; 4-line headline
+[180/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:135:11 ΓÇ║ Hero layout conformance at 667x375 ΓÇ║ reduced motion: rects match computeHeroLayout within 1 px; 4-line headline
+[181/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:173:9 ΓÇ║ Hero layout conformance at 667x375 ΓÇ║ web font blocked: same line count, headline height within 2% (Req 16.3)
+[182/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:135:11 ΓÇ║ Hero layout conformance at 844x390 ΓÇ║ default motion: rects match computeHeroLayout within 1 px; 3-line headline
+[183/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:135:11 ΓÇ║ Hero layout conformance at 844x390 ΓÇ║ reduced motion: rects match computeHeroLayout within 1 px; 3-line headline
+[184/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:173:9 ΓÇ║ Hero layout conformance at 844x390 ΓÇ║ web font blocked: same line count, headline height within 2% (Req 16.3)
+[185/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:135:11 ΓÇ║ Hero layout conformance at 768x1024 ΓÇ║ default motion: rects match computeHeroLayout within 1 px; 3-line headline
+[186/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:135:11 ΓÇ║ Hero layout conformance at 768x1024 ΓÇ║ reduced motion: rects match computeHeroLayout within 1 px; 3-line headline
+[187/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:173:9 ΓÇ║ Hero layout conformance at 768x1024 ΓÇ║ web font blocked: same line count, headline height within 2% (Req 16.3)
+[188/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:135:11 ΓÇ║ Hero layout conformance at 1024x768 ΓÇ║ default motion: rects match computeHeroLayout within 1 px; 3-line headline
+[189/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:135:11 ΓÇ║ Hero layout conformance at 1024x768 ΓÇ║ reduced motion: rects match computeHeroLayout within 1 px; 3-line headline
+[190/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:173:9 ΓÇ║ Hero layout conformance at 1024x768 ΓÇ║ web font blocked: same line count, headline height within 2% (Req 16.3)
+[191/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:135:11 ΓÇ║ Hero layout conformance at 1024x1366 ΓÇ║ default motion: rects match computeHeroLayout within 1 px; 3-line headline
+[192/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:135:11 ΓÇ║ Hero layout conformance at 1024x1366 ΓÇ║ reduced motion: rects match computeHeroLayout within 1 px; 3-line headline
+[193/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:173:9 ΓÇ║ Hero layout conformance at 1024x1366 ΓÇ║ web font blocked: same line count, headline height within 2% (Req 16.3)
+[194/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:135:11 ΓÇ║ Hero layout conformance at 1280x800 ΓÇ║ default motion: rects match computeHeroLayout within 1 px; 3-line headline
+[195/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:135:11 ΓÇ║ Hero layout conformance at 1280x800 ΓÇ║ reduced motion: rects match computeHeroLayout within 1 px; 3-line headline
+[196/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:173:9 ΓÇ║ Hero layout conformance at 1280x800 ΓÇ║ web font blocked: same line count, headline height within 2% (Req 16.3)
+[197/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:135:11 ΓÇ║ Hero layout conformance at 1440x900 ΓÇ║ default motion: rects match computeHeroLayout within 1 px; 3-line headline
+[198/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:135:11 ΓÇ║ Hero layout conformance at 1440x900 ΓÇ║ reduced motion: rects match computeHeroLayout within 1 px; 3-line headline
+[199/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:173:9 ΓÇ║ Hero layout conformance at 1440x900 ΓÇ║ web font blocked: same line count, headline height within 2% (Req 16.3)
+[200/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:135:11 ΓÇ║ Hero layout conformance at 1920x1080 ΓÇ║ default motion: rects match computeHeroLayout within 1 px; 3-line headline
+[201/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:135:11 ΓÇ║ Hero layout conformance at 1920x1080 ΓÇ║ reduced motion: rects match computeHeroLayout within 1 px; 3-line headline
+[202/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:173:9 ΓÇ║ Hero layout conformance at 1920x1080 ΓÇ║ web font blocked: same line count, headline height within 2% (Req 16.3)
+[203/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:135:11 ΓÇ║ Hero layout conformance at 1920x1080@2x ΓÇ║ default motion: rects match computeHeroLayout within 1 px; 3-line headline
+[204/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:135:11 ΓÇ║ Hero layout conformance at 1920x1080@2x ΓÇ║ reduced motion: rects match computeHeroLayout within 1 px; 3-line headline
+[205/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:173:9 ΓÇ║ Hero layout conformance at 1920x1080@2x ΓÇ║ web font blocked: same line count, headline height within 2% (Req 16.3)
+[206/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:135:11 ΓÇ║ Hero layout conformance at 3840x2160 ΓÇ║ default motion: rects match computeHeroLayout within 1 px; 3-line headline
+[207/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:135:11 ΓÇ║ Hero layout conformance at 3840x2160 ΓÇ║ reduced motion: rects match computeHeroLayout within 1 px; 3-line headline
+[208/415] [chromium] ΓÇ║ tests\e2e\layout-conformance.spec.ts:173:9 ΓÇ║ Hero layout conformance at 3840x2160 ΓÇ║ web font blocked: same line count, headline height within 2% (Req 16.3)
+[209/415] [chromium] ΓÇ║ tests\e2e\mobile-menu.spec.ts:657:9 ΓÇ║ Mobile_Menu in the default build ΓÇ║ opens with the six live routes at 390x844
+[210/415] [chromium] ΓÇ║ tests\e2e\mobile-menu.spec.ts:657:9 ΓÇ║ Mobile_Menu in the default build ΓÇ║ opens with the six live routes at 1024x768
+[211/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:145:9 ΓÇ║ Mobile composition at 320x568 (compact) ΓÇ║ DOM order keeps the Emblem_Stage last (Req 3.1, 10.1)
+[212/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:165:11 ΓÇ║ Mobile composition at 320x568 (compact) ΓÇ║ emblem stacks above the text, end-aligned in columns 3ΓÇô4 (Req 10.1)
+[213/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:176:11 ΓÇ║ Mobile composition at 320x568 (compact) ΓÇ║ emblem height follows the compact band rule and the 972:1108 ratio (Req 10.2, 10.3)
+[214/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:189:11 ΓÇ║ Mobile composition at 320x568 (compact) ΓÇ║ vertical rhythm matches the compact band (Req 10.2, 10.3)
+[215/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:211:11 ΓÇ║ Mobile composition at 320x568 (compact) ΓÇ║ CTAs stack full text width, ΓëÑ 48 px tall, 12 px apart, Primary first (Req 10.5)
+[216/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:286:9 ΓÇ║ Mobile composition at 320x568 (compact) ΓÇ║ inline gutters are max(20px, safe-area) with no horizontal overflow (Req 10.4, 1.4)
+[217/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:311:9 ΓÇ║ Mobile composition at 320x568 (compact) ΓÇ║ Hero min-height is the small viewport and grows with content (Req 10.6)
+[218/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:339:9 ΓÇ║ Mobile composition at 320x568 (compact) ΓÇ║ initial viewport shows the headline below the header (Req 1.4)
+[219/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:376:9 ΓÇ║ Mobile composition at 320x568 (compact) ΓÇ║ interactive targets are ΓëÑ 44├ù44 and ΓëÑ 8 px apart (Req 10.9)
+[220/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:145:9 ΓÇ║ Mobile composition at 360x640 (compact) ΓÇ║ DOM order keeps the Emblem_Stage last (Req 3.1, 10.1)
+[221/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:165:11 ΓÇ║ Mobile composition at 360x640 (compact) ΓÇ║ emblem stacks above the text, end-aligned in columns 3ΓÇô4 (Req 10.1)
+[222/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:176:11 ΓÇ║ Mobile composition at 360x640 (compact) ΓÇ║ emblem height follows the compact band rule and the 972:1108 ratio (Req 10.2, 10.3)
+[223/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:189:11 ΓÇ║ Mobile composition at 360x640 (compact) ΓÇ║ vertical rhythm matches the compact band (Req 10.2, 10.3)
+[224/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:211:11 ΓÇ║ Mobile composition at 360x640 (compact) ΓÇ║ CTAs stack full text width, ΓëÑ 48 px tall, 12 px apart, Primary first (Req 10.5)
+[225/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:286:9 ΓÇ║ Mobile composition at 360x640 (compact) ΓÇ║ inline gutters are max(20px, safe-area) with no horizontal overflow (Req 10.4, 1.4)
+[226/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:311:9 ΓÇ║ Mobile composition at 360x640 (compact) ΓÇ║ Hero min-height is the small viewport and grows with content (Req 10.6)
+[227/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:339:9 ΓÇ║ Mobile composition at 360x640 (compact) ΓÇ║ initial viewport shows the headline, copy and Primary_CTA below the header (Req 1.3)
+[228/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:376:9 ΓÇ║ Mobile composition at 360x640 (compact) ΓÇ║ interactive targets are ΓëÑ 44├ù44 and ΓëÑ 8 px apart (Req 10.9)
+[229/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:145:9 ΓÇ║ Mobile composition at 375x667 (compact) ΓÇ║ DOM order keeps the Emblem_Stage last (Req 3.1, 10.1)
+[230/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:165:11 ΓÇ║ Mobile composition at 375x667 (compact) ΓÇ║ emblem stacks above the text, end-aligned in columns 3ΓÇô4 (Req 10.1)
+[231/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:176:11 ΓÇ║ Mobile composition at 375x667 (compact) ΓÇ║ emblem height follows the compact band rule and the 972:1108 ratio (Req 10.2, 10.3)
+[232/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:189:11 ΓÇ║ Mobile composition at 375x667 (compact) ΓÇ║ vertical rhythm matches the compact band (Req 10.2, 10.3)
+[233/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:211:11 ΓÇ║ Mobile composition at 375x667 (compact) ΓÇ║ CTAs stack full text width, ΓëÑ 48 px tall, 12 px apart, Primary first (Req 10.5)
+[234/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:286:9 ΓÇ║ Mobile composition at 375x667 (compact) ΓÇ║ inline gutters are max(20px, safe-area) with no horizontal overflow (Req 10.4, 1.4)
+[235/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:311:9 ΓÇ║ Mobile composition at 375x667 (compact) ΓÇ║ Hero min-height is the small viewport and grows with content (Req 10.6)
+[236/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:339:9 ΓÇ║ Mobile composition at 375x667 (compact) ΓÇ║ initial viewport shows the headline, copy and Primary_CTA below the header (Req 1.3)
+[237/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:376:9 ΓÇ║ Mobile composition at 375x667 (compact) ΓÇ║ interactive targets are ΓëÑ 44├ù44 and ΓëÑ 8 px apart (Req 10.9)
+[238/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:145:9 ΓÇ║ Mobile composition at 390x660 (compact) ΓÇ║ DOM order keeps the Emblem_Stage last (Req 3.1, 10.1)
+[239/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:165:11 ΓÇ║ Mobile composition at 390x660 (compact) ΓÇ║ emblem stacks above the text, end-aligned in columns 3ΓÇô4 (Req 10.1)
+[240/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:176:11 ΓÇ║ Mobile composition at 390x660 (compact) ΓÇ║ emblem height follows the compact band rule and the 972:1108 ratio (Req 10.2, 10.3)
+[241/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:189:11 ΓÇ║ Mobile composition at 390x660 (compact) ΓÇ║ vertical rhythm matches the compact band (Req 10.2, 10.3)
+[242/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:211:11 ΓÇ║ Mobile composition at 390x660 (compact) ΓÇ║ CTAs stack full text width, ΓëÑ 48 px tall, 12 px apart, Primary first (Req 10.5)
+[243/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:286:9 ΓÇ║ Mobile composition at 390x660 (compact) ΓÇ║ inline gutters are max(20px, safe-area) with no horizontal overflow (Req 10.4, 1.4)
+[244/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:311:9 ΓÇ║ Mobile composition at 390x660 (compact) ΓÇ║ Hero min-height is the small viewport and grows with content (Req 10.6)
+[245/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:339:9 ΓÇ║ Mobile composition at 390x660 (compact) ΓÇ║ initial viewport shows the headline, copy and Primary_CTA below the header (Req 1.3)
+[246/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:376:9 ΓÇ║ Mobile composition at 390x660 (compact) ΓÇ║ interactive targets are ΓëÑ 44├ù44 and ΓëÑ 8 px apart (Req 10.9)
+[247/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:145:9 ΓÇ║ Mobile composition at 390x844 (tall) ΓÇ║ DOM order keeps the Emblem_Stage last (Req 3.1, 10.1)
+[248/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:165:11 ΓÇ║ Mobile composition at 390x844 (tall) ΓÇ║ emblem stacks above the text, end-aligned in columns 3ΓÇô4 (Req 10.1)
+[249/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:176:11 ΓÇ║ Mobile composition at 390x844 (tall) ΓÇ║ emblem height follows the tall band rule and the 972:1108 ratio (Req 10.2, 10.3)
+[250/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:189:11 ΓÇ║ Mobile composition at 390x844 (tall) ΓÇ║ vertical rhythm matches the tall band (Req 10.2, 10.3)
+[251/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:211:11 ΓÇ║ Mobile composition at 390x844 (tall) ΓÇ║ CTAs stack full text width, ΓëÑ 48 px tall, 12 px apart, Primary first (Req 10.5)
+[252/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:286:9 ΓÇ║ Mobile composition at 390x844 (tall) ΓÇ║ inline gutters are max(20px, safe-area) with no horizontal overflow (Req 10.4, 1.4)
+[253/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:311:9 ΓÇ║ Mobile composition at 390x844 (tall) ΓÇ║ Hero min-height is the small viewport and grows with content (Req 10.6)
+[254/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:339:9 ΓÇ║ Mobile composition at 390x844 (tall) ΓÇ║ initial viewport shows the headline, copy and Primary_CTA below the header (Req 1.3)
+[255/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:376:9 ΓÇ║ Mobile composition at 390x844 (tall) ΓÇ║ interactive targets are ΓëÑ 44├ù44 and ΓëÑ 8 px apart (Req 10.9)
+[256/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:145:9 ΓÇ║ Mobile composition at 414x896 (tall) ΓÇ║ DOM order keeps the Emblem_Stage last (Req 3.1, 10.1)
+[257/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:165:11 ΓÇ║ Mobile composition at 414x896 (tall) ΓÇ║ emblem stacks above the text, end-aligned in columns 3ΓÇô4 (Req 10.1)
+[258/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:176:11 ΓÇ║ Mobile composition at 414x896 (tall) ΓÇ║ emblem height follows the tall band rule and the 972:1108 ratio (Req 10.2, 10.3)
+[259/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:189:11 ΓÇ║ Mobile composition at 414x896 (tall) ΓÇ║ vertical rhythm matches the tall band (Req 10.2, 10.3)
+[260/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:211:11 ΓÇ║ Mobile composition at 414x896 (tall) ΓÇ║ CTAs stack full text width, ΓëÑ 48 px tall, 12 px apart, Primary first (Req 10.5)
+[261/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:286:9 ΓÇ║ Mobile composition at 414x896 (tall) ΓÇ║ inline gutters are max(20px, safe-area) with no horizontal overflow (Req 10.4, 1.4)
+[262/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:311:9 ΓÇ║ Mobile composition at 414x896 (tall) ΓÇ║ Hero min-height is the small viewport and grows with content (Req 10.6)
+[263/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:339:9 ΓÇ║ Mobile composition at 414x896 (tall) ΓÇ║ initial viewport shows the headline, copy and Primary_CTA below the header (Req 1.3)
+[264/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:376:9 ΓÇ║ Mobile composition at 414x896 (tall) ΓÇ║ interactive targets are ΓëÑ 44├ù44 and ΓëÑ 8 px apart (Req 10.9)
+[265/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:145:9 ΓÇ║ Mobile composition at 667x375 (landscape) ΓÇ║ DOM order keeps the Emblem_Stage last (Req 3.1, 10.1)
+[266/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:230:11 ΓÇ║ Mobile composition at 667x375 (landscape) ΓÇ║ landscape: 60/40 split, emblem Γëñ 70svh and inside its column (Req 10.7)
+[267/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:261:11 ΓÇ║ Mobile composition at 667x375 (landscape) ΓÇ║ landscape: Site_Header is 56 px tall (Req 10.11)
+[268/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:267:11 ΓÇ║ Mobile composition at 667x375 (landscape) ΓÇ║ landscape: CTAs keep order, ΓëÑ 48 px tall, never overlap (Req 3.4, 10.9)
+[269/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:286:9 ΓÇ║ Mobile composition at 667x375 (landscape) ΓÇ║ inline gutters are max(20px, safe-area) with no horizontal overflow (Req 10.4, 1.4)
+[270/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:311:9 ΓÇ║ Mobile composition at 667x375 (landscape) ΓÇ║ Hero min-height is the small viewport and grows with content (Req 10.6)
+[271/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:339:9 ΓÇ║ Mobile composition at 667x375 (landscape) ΓÇ║ initial viewport shows the headline below the header (Req 1.4)
+[272/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:376:9 ΓÇ║ Mobile composition at 667x375 (landscape) ΓÇ║ interactive targets are ΓëÑ 44├ù44 and ΓëÑ 8 px apart (Req 10.9)
+[273/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:145:9 ΓÇ║ Mobile composition at 844x390 (landscape) ΓÇ║ DOM order keeps the Emblem_Stage last (Req 3.1, 10.1)
+[274/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:230:11 ΓÇ║ Mobile composition at 844x390 (landscape) ΓÇ║ landscape: 60/40 split, emblem Γëñ 70svh and inside its column (Req 10.7)
+[275/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:261:11 ΓÇ║ Mobile composition at 844x390 (landscape) ΓÇ║ landscape: Site_Header is 56 px tall (Req 10.11)
+[276/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:267:11 ΓÇ║ Mobile composition at 844x390 (landscape) ΓÇ║ landscape: CTAs keep order, ΓëÑ 48 px tall, never overlap (Req 3.4, 10.9)
+[277/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:286:9 ΓÇ║ Mobile composition at 844x390 (landscape) ΓÇ║ inline gutters are max(20px, safe-area) with no horizontal overflow (Req 10.4, 1.4)
+[278/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:311:9 ΓÇ║ Mobile composition at 844x390 (landscape) ΓÇ║ Hero min-height is the small viewport and grows with content (Req 10.6)
+[279/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:339:9 ΓÇ║ Mobile composition at 844x390 (landscape) ΓÇ║ initial viewport shows the headline below the header (Req 1.4)
+[280/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:376:9 ΓÇ║ Mobile composition at 844x390 (landscape) ΓÇ║ interactive targets are ΓëÑ 44├ù44 and ΓëÑ 8 px apart (Req 10.9)
+[281/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:397:7 ΓÇ║ compact rhythm at 390 wide ΓÇ║ 390├ù660 gaps are 75% of 390├ù844 (Req 10.3)
+[282/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:421:7 ΓÇ║ hover and touch ΓÇ║ stylesheet: hover rules reveal nothing and each has a touch :active twin (Req 10.8, 10.10)
+[283/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:471:9 ΓÇ║ hover and touch ΓÇ║ hover-capable pointer at 390├ù844 ΓÇ║ hovering any control reveals no element (Req 10.10)
+[284/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:500:9 ΓÇ║ hover and touch ΓÇ║ touch device at 390├ù844 ΓÇ║ press shows the hover overlay on :active; hover alone does nothing (Req 10.8)
+[285/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:537:7 ΓÇ║ safe areas ΓÇ║ every mobile edge adds env(safe-area-inset-*) in the stylesheet (Req 10.4, 16.5)
+[286/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:590:11 ΓÇ║ safe areas ΓÇ║ emulated insets at 390x844 ΓÇ║ header, gutters and bottom padding add the insets (Req 10.4, 10.11)
+[287/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:590:11 ΓÇ║ safe areas ΓÇ║ emulated insets at 844x390 ΓÇ║ header, gutters and bottom padding add the insets (Req 10.4, 10.11)
+[288/415] [chromium] ΓÇ║ tests\e2e\mobile.spec.ts:643:7 ΓÇ║ document head ΓÇ║ title, description, viewport and theme-color (Req 16.5, 16.6, 12.6)
+[289/415] [chromium] ΓÇ║ tests\e2e\motion-loader.spec.ts:44:5 ΓÇ║ requests the motion chunk only after hydration, and never from the initial HTML
+[290/415] [chromium] ΓÇ║ tests\e2e\motion-loader.spec.ts:81:5 ΓÇ║ a failed motion chunk leaves the static page, with no uncaught error and no app retry
+[291/415] [chromium] ΓÇ║ tests\e2e\motion.spec.ts:275:7 ΓÇ║ motion at 1440x900 (capable) ΓÇ║ Specular_Sweep arms once for ~1400 ms, rests, and is not re-armed by resize, scroll or visibility (Req 9.6, 9.15)
+[292/415] [chromium] ΓÇ║ tests\e2e\motion.spec.ts:449:7 ΓÇ║ motion at 1440x900 (capable) ΓÇ║ a failed emblem image never gets the sweep (Req 5.10, 17.1)
+[293/415] [chromium] ΓÇ║ tests\e2e\motion.spec.ts:459:7 ΓÇ║ motion at 1440x900 (capable) ΓÇ║ Low_Power_Mode: no sweep and no parallax (Req 9.12)
+[294/415] [chromium] ΓÇ║ tests\e2e\motion.spec.ts:306:7 ΓÇ║ motion at 1440x900 (capable) ΓÇ║ a hidden document jumps a running sweep to rest; returning does not replay it (Req 9.13, 9.15)
+[295/415] [chromium] ΓÇ║ tests\e2e\motion.spec.ts:324:7 ΓÇ║ motion at 1440x900 (capable) ΓÇ║ Pointer_Parallax stays within 12 px / 2┬░, moves the light opposite and rests on leave; GSAP never writes [data-intro] (Req 9.7, 9.14, 13.11)
+[296/415] [chromium] ΓÇ║ tests\e2e\motion.spec.ts:470:7 ΓÇ║ motion at 1440x900 (capable) ΓÇ║ bfcache restore holds the resting frame with no replay (Req 9.15)
+[297/415] [chromium] ΓÇ║ tests\e2e\motion.spec.ts:491:7 ΓÇ║ motion at 1440x900 (reduced motion) ΓÇ║ no sweep and no parallax under prefers-reduced-motion: reduce (Req 9.10)
+[298/415] [chromium] ΓÇ║ tests\e2e\motion.spec.ts:377:7 ΓÇ║ motion at 1440x900 (capable) ΓÇ║ idle and off-screen: no GSAP frames and no wrapper writes, even with pointer input (Req 9.13, 13.10)
+[299/415] [chromium] ΓÇ║ tests\e2e\motion.spec.ts:515:7 ΓÇ║ motion at 390x844 (touch, capable) ΓÇ║ the sweep plays once; touch and mouse input never drive parallax (Req 9.6, 9.7)
+[300/415] [chromium] ΓÇ║ tests\e2e\reduced-motion.spec.ts:271:9 ΓÇ║ reduced motion at load, 1440x900 ΓÇ║ final composition from first paint: 100 ms and 2000 ms screenshots identical; no intro, sweep or parallax; matches the default-motion final state (Req 9.10, 18.4)
+[301/415] [chromium] ΓÇ║ tests\e2e\motion.spec.ts:432:7 ΓÇ║ motion at 1440x900 (capable) ΓÇ║ a chunk later than 1600 ms skips the sweep but keeps parallax (Req 16.8)
+[302/415] [chromium] ΓÇ║ tests\e2e\reduced-motion.spec.ts:373:7 ΓÇ║ runtime reduced-motion toggle, 1440x900 ΓÇ║ reduce at load, then OFF: no intro replay, no sweep, parallax available (Req 9.11)
+[303/415] [chromium] ΓÇ║ tests\e2e\reduced-motion.spec.ts:271:9 ΓÇ║ reduced motion at load, 390x844 ΓÇ║ final composition from first paint: 100 ms and 2000 ms screenshots identical; no intro, sweep or parallax; matches the default-motion final state (Req 9.10, 18.4)
+[304/415] [chromium] ΓÇ║ tests\e2e\reduced-motion.spec.ts:431:9 ΓÇ║ UI transitions under reduce, 1440x900 ΓÇ║ CTA hover overlay and header surface transitions are Γëñ 150 ms (Req 9.10)
+[305/415] [chromium] ΓÇ║ tests\e2e\reduced-motion.spec.ts:431:9 ΓÇ║ UI transitions under reduce, 390x844 ΓÇ║ CTA hover overlay and header surface transitions are Γëñ 150 ms (Req 9.10)
+[306/415] [chromium] ΓÇ║ tests\e2e\reduced-motion.spec.ts:271:9 ΓÇ║ reduced motion at load, 844x390 ΓÇ║ final composition from first paint: 100 ms and 2000 ms screenshots identical; no intro, sweep or parallax; matches the default-motion final state (Req 9.10, 18.4)
+[307/415] [chromium] ΓÇ║ tests\e2e\site.spec.ts:26:9 ΓÇ║ routes ΓÇ║ /: 200, one h1, canonical, OG, nav state
+[308/415] [chromium] ΓÇ║ tests\e2e\site.spec.ts:26:9 ΓÇ║ routes ΓÇ║ /advisory: 200, one h1, canonical, OG, nav state
+[309/415] [chromium] ΓÇ║ tests\e2e\site.spec.ts:26:9 ΓÇ║ routes ΓÇ║ /industries: 200, one h1, canonical, OG, nav state
+[310/415] [chromium] ΓÇ║ tests\e2e\site.spec.ts:26:9 ΓÇ║ routes ΓÇ║ /intelligence: 200, one h1, canonical, OG, nav state
+[311/415] [chromium] ΓÇ║ tests\e2e\site.spec.ts:26:9 ΓÇ║ routes ΓÇ║ /insights: 200, one h1, canonical, OG, nav state
+[312/415] [chromium] ΓÇ║ tests\e2e\site.spec.ts:26:9 ΓÇ║ routes ΓÇ║ /insights/the-meaning-of-peyman: 200, one h1, canonical, OG, nav state
+[313/415] [chromium] ΓÇ║ tests\e2e\site.spec.ts:26:9 ΓÇ║ routes ΓÇ║ /about: 200, one h1, canonical, OG, nav state
+[314/415] [chromium] ΓÇ║ tests\e2e\site.spec.ts:26:9 ΓÇ║ routes ΓÇ║ /recognition: 200, one h1, canonical, OG, nav state
+[315/415] [chromium] ΓÇ║ tests\e2e\site.spec.ts:26:9 ΓÇ║ routes ΓÇ║ /contact: 200, one h1, canonical, OG, nav state
+[316/415] [chromium] ΓÇ║ tests\e2e\site.spec.ts:26:9 ΓÇ║ routes ΓÇ║ /privacy: 200, one h1, canonical, OG, nav state
+[317/415] [chromium] ΓÇ║ tests\e2e\site.spec.ts:26:9 ΓÇ║ routes ΓÇ║ /terms: 200, one h1, canonical, OG, nav state
+[318/415] [chromium] ΓÇ║ tests\e2e\site.spec.ts:43:7 ΓÇ║ routes ΓÇ║ unknown routes and article slugs 404 with the site shell
+[319/415] [chromium] ΓÇ║ tests\e2e\site.spec.ts:54:9 ΓÇ║ responsive ΓÇ║ no horizontal overflow or tiny text at 320px
+[320/415] [chromium] ΓÇ║ tests\e2e\site.spec.ts:54:9 ΓÇ║ responsive ΓÇ║ no horizontal overflow or tiny text at 360px
+[321/415] [chromium] ΓÇ║ tests\e2e\site.spec.ts:54:9 ΓÇ║ responsive ΓÇ║ no horizontal overflow or tiny text at 375px
+[322/415] [chromium] ΓÇ║ tests\e2e\reduced-motion.spec.ts:331:7 ΓÇ║ runtime reduced-motion toggle, 1440x900 ΓÇ║ reduce ON mid-intro: final within 2 frames; OFF: no replay, no sweep, parallax back; ON again reverts parallax within 2 frames (Req 9.11)
+[323/415] [chromium] ΓÇ║ tests\e2e\site.spec.ts:54:9 ΓÇ║ responsive ΓÇ║ no horizontal overflow or tiny text at 390px
+[324/415] [chromium] ΓÇ║ tests\e2e\site.spec.ts:54:9 ΓÇ║ responsive ΓÇ║ no horizontal overflow or tiny text at 414px
+[325/415] [chromium] ΓÇ║ tests\e2e\site.spec.ts:54:9 ΓÇ║ responsive ΓÇ║ no horizontal overflow or tiny text at 768px
+[326/415] [chromium] ΓÇ║ tests\e2e\site.spec.ts:54:9 ΓÇ║ responsive ΓÇ║ no horizontal overflow or tiny text at 1024px
+[327/415] [chromium] ΓÇ║ tests\e2e\site.spec.ts:54:9 ΓÇ║ responsive ΓÇ║ no horizontal overflow or tiny text at 1280px
+[328/415] [chromium] ΓÇ║ tests\e2e\site.spec.ts:54:9 ΓÇ║ responsive ΓÇ║ no horizontal overflow or tiny text at 1440px
+[329/415] [chromium] ΓÇ║ tests\e2e\site.spec.ts:54:9 ΓÇ║ responsive ΓÇ║ no horizontal overflow or tiny text at 1920px
+[330/415] [chromium] ΓÇ║ tests\e2e\site.spec.ts:78:9 ΓÇ║ accessibility ΓÇ║ axe WCAG 2.2 AA on every route at 375px
+[331/415] [chromium] ΓÇ║ tests\e2e\site.spec.ts:78:9 ΓÇ║ accessibility ΓÇ║ axe WCAG 2.2 AA on every route at 1440px
+[332/415] [chromium] ΓÇ║ tests\e2e\site.spec.ts:94:7 ΓÇ║ inquiry form ΓÇ║ client validation focuses the first invalid field; ?interest pre-selects
+[333/415] [chromium] ΓÇ║ tests\e2e\site.spec.ts:104:7 ΓÇ║ inquiry form ΓÇ║ a valid inquiry reaches the server; without storage configured it fails gracefully and keeps values
+[334/415] [chromium] ΓÇ║ tests\e2e\site.spec.ts:121:7 ΓÇ║ inquiry form ΓÇ║ the honeypot returns a silent success
+[335/415] [chromium] ΓÇ║ tests\e2e\site.spec.ts:133:7 ΓÇ║ inquiry form ΓÇ║ without JavaScript the server validates and renders errors
+[336/415] [chromium] ΓÇ║ tests\e2e\site.spec.ts:146:7 ΓÇ║ SEO endpoints ΓÇ║ robots, sitemap, OG image and icon
+[337/415] [chromium] ΓÇ║ tests\e2e\site.spec.ts:155:7 ΓÇ║ SEO endpoints ΓÇ║ Organization / ProfessionalService and Article JSON-LD
+[338/415] [chromium] ΓÇ║ tests\e2e\site.spec.ts:167:7 ΓÇ║ Scroll_Exit (homepage) ΓÇ║ silent at rest, drives the emblem while scrolling, restores at the top
+node.exe 
+: [WebServ
+er] 
+[inquiry] 
+Supabase 
+is not con
+figured (S
+UPABASE_UR
+L / SUPABA
+SE_ANON_KE
+Y).
+At line:1 
+char:1
++ & "C:\Pr
+ogram File
+s\nodejs/n
+ode.exe" "
+C:\Program
+ Files\nod
+ejs/node_m
+o ...
++ ~~~~~~~~
+~~~~~~~~~~
+~~~~~~~~~~
+~~~~~~~~~~
+~~~~~~~~~~
+~~~~~~~~~~
+~~~~~~~~~~
+~
+    + Cat 
+   egory  
+  Info    
+          
+    :     
+NotS    
+pecif    
+ied:     
+([Web    
+Serve    
+r] [i    
+n...B    
+ASE_A    
+NON_K    
+EY).:    
+Strin    
+g) []    
+, Rem    
+oteEx    
+cepti    
+on
+    + Ful 
+   lyQua  
+  lifie   
+ dErro    
+rId :     
+Nati    
+veCom    
+mandE    
+rror
+ 
+
+[339/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:108:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 320x568 ΓÇ║ trigger is a 44├ù44 button with aria-expanded, aria-controls and Menu/Close menu names (Req 8.1) @nav-live
+[340/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:177:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 320x568 ΓÇ║ contains close control, nav items, Primary_CTA and location in DOM order (Req 8.11) @nav-live
+[341/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:128:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 320x568 ΓÇ║ opens as a labelled modal dialog and focuses the close control within 50 ms (Req 8.2) @nav-live
+[342/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:214:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 320x568 ΓÇ║ nav items use 28ΓÇô32 px type with ΓëÑ 44 px targets spaced ΓëÑ 8 px (Req 8.11) @nav-live
+[343/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:236:13 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 320x568 ΓÇ║ fills the viewport with no backdrop below 768 (Req 8.3) @nav-live
+[344/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:276:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 320x568 ΓÇ║ sets inert outside the menu, including the trigger, and releases it on close (Req 8.5, 8.13) @nav-live
+[345/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:302:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 320x568 ΓÇ║ Tab and Shift+Tab wrap inside the menu (Req 8.12, 12.12) @nav-live
+[346/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:320:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 320x568 ΓÇ║ Escape closes and returns focus to the trigger (Req 8.6) @nav-live
+[347/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:326:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 320x568 ΓÇ║ close control closes within 280 ms and returns focus (Req 8.7, 8.10) @nav-live
+[348/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:357:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 320x568 ΓÇ║ a live Nav_Item closes, returns focus and navigates (Req 8.7) @nav-live
+[349/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:364:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 320x568 ΓÇ║ a live in-page Nav_Item closes the menu and follows its anchor (Req 8.7) @nav-live
+[350/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:371:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 320x568 ΓÇ║ the Primary_CTA closes, returns focus and keeps its destination (Req 8.7) @nav-live
+[351/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:385:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 320x568 ΓÇ║ a planned item keeps the menu open and focus on itself (Req 8.14) @nav-live
+[352/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:405:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 320x568 ΓÇ║ locks scroll with 0 px horizontal shift and restores the position (Req 8.5, 8.13) @nav-live
+[353/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:443:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 320x568 ΓÇ║ crossing to 1280 closes instantly and focuses the Brand_Mark (Req 8.8) @nav-live
+[354/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:108:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 390x844 ΓÇ║ trigger is a 44├ù44 button with aria-expanded, aria-controls and Menu/Close menu names (Req 8.1) @nav-live
+[355/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:128:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 390x844 ΓÇ║ opens as a labelled modal dialog and focuses the close control within 50 ms (Req 8.2) @nav-live
+[356/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:177:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 390x844 ΓÇ║ contains close control, nav items, Primary_CTA and location in DOM order (Req 8.11) @nav-live
+[357/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:214:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 390x844 ΓÇ║ nav items use 28ΓÇô32 px type with ΓëÑ 44 px targets spaced ΓëÑ 8 px (Req 8.11) @nav-live
+[358/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:236:13 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 390x844 ΓÇ║ fills the viewport with no backdrop below 768 (Req 8.3) @nav-live
+[359/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:276:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 390x844 ΓÇ║ sets inert outside the menu, including the trigger, and releases it on close (Req 8.5, 8.13) @nav-live
+[360/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:302:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 390x844 ΓÇ║ Tab and Shift+Tab wrap inside the menu (Req 8.12, 12.12) @nav-live
+[361/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:320:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 390x844 ΓÇ║ Escape closes and returns focus to the trigger (Req 8.6) @nav-live
+[362/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:326:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 390x844 ΓÇ║ close control closes within 280 ms and returns focus (Req 8.7, 8.10) @nav-live
+[363/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:357:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 390x844 ΓÇ║ a live Nav_Item closes, returns focus and navigates (Req 8.7) @nav-live
+[364/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:364:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 390x844 ΓÇ║ a live in-page Nav_Item closes the menu and follows its anchor (Req 8.7) @nav-live
+[365/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:371:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 390x844 ΓÇ║ the Primary_CTA closes, returns focus and keeps its destination (Req 8.7) @nav-live
+[366/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:385:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 390x844 ΓÇ║ a planned item keeps the menu open and focus on itself (Req 8.14) @nav-live
+[367/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:405:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 390x844 ΓÇ║ locks scroll with 0 px horizontal shift and restores the position (Req 8.5, 8.13) @nav-live
+[368/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:443:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 390x844 ΓÇ║ crossing to 1280 closes instantly and focuses the Brand_Mark (Req 8.8) @nav-live
+[369/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:108:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 768x1024 ΓÇ║ trigger is a 44├ù44 button with aria-expanded, aria-controls and Menu/Close menu names (Req 8.1) @nav-live
+[370/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:128:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 768x1024 ΓÇ║ opens as a labelled modal dialog and focuses the close control within 50 ms (Req 8.2) @nav-live
+[371/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:177:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 768x1024 ΓÇ║ contains close control, nav items, Primary_CTA and location in DOM order (Req 8.11) @nav-live
+[372/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:214:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 768x1024 ΓÇ║ nav items use 28ΓÇô32 px type with ΓëÑ 44 px targets spaced ΓëÑ 8 px (Req 8.11) @nav-live
+[373/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:248:13 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 768x1024 ΓÇ║ renders a right 420 px panel over an ink-950 64% backdrop at 768ΓÇô1279 (Req 8.4) @nav-live
+[374/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:269:13 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 768x1024 ΓÇ║ backdrop click closes and returns focus to the trigger (Req 8.7) @nav-live
+[375/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:276:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 768x1024 ΓÇ║ sets inert outside the menu, including the trigger, and releases it on close (Req 8.5, 8.13) @nav-live
+[376/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:302:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 768x1024 ΓÇ║ Tab and Shift+Tab wrap inside the menu (Req 8.12, 12.12) @nav-live
+[377/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:320:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 768x1024 ΓÇ║ Escape closes and returns focus to the trigger (Req 8.6) @nav-live
+[378/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:326:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 768x1024 ΓÇ║ close control closes within 280 ms and returns focus (Req 8.7, 8.10) @nav-live
+[379/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:357:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 768x1024 ΓÇ║ a live Nav_Item closes, returns focus and navigates (Req 8.7) @nav-live
+[380/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:364:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 768x1024 ΓÇ║ a live in-page Nav_Item closes the menu and follows its anchor (Req 8.7) @nav-live
+[381/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:371:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 768x1024 ΓÇ║ the Primary_CTA closes, returns focus and keeps its destination (Req 8.7) @nav-live
+[382/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:385:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 768x1024 ΓÇ║ a planned item keeps the menu open and focus on itself (Req 8.14) @nav-live
+[383/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:405:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 768x1024 ΓÇ║ locks scroll with 0 px horizontal shift and restores the position (Req 8.5, 8.13) @nav-live
+[384/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:443:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 768x1024 ΓÇ║ crossing to 1280 closes instantly and focuses the Brand_Mark (Req 8.8) @nav-live
+[385/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:108:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 1024x768 ΓÇ║ trigger is a 44├ù44 button with aria-expanded, aria-controls and Menu/Close menu names (Req 8.1) @nav-live
+[386/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:128:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 1024x768 ΓÇ║ opens as a labelled modal dialog and focuses the close control within 50 ms (Req 8.2) @nav-live
+[387/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:177:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 1024x768 ΓÇ║ contains close control, nav items, Primary_CTA and location in DOM order (Req 8.11) @nav-live
+[388/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:214:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 1024x768 ΓÇ║ nav items use 28ΓÇô32 px type with ΓëÑ 44 px targets spaced ΓëÑ 8 px (Req 8.11) @nav-live
+[389/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:248:13 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 1024x768 ΓÇ║ renders a right 420 px panel over an ink-950 64% backdrop at 768ΓÇô1279 (Req 8.4) @nav-live
+[390/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:269:13 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 1024x768 ΓÇ║ backdrop click closes and returns focus to the trigger (Req 8.7) @nav-live
+[391/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:276:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 1024x768 ΓÇ║ sets inert outside the menu, including the trigger, and releases it on close (Req 8.5, 8.13) @nav-live
+[392/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:302:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 1024x768 ΓÇ║ Tab and Shift+Tab wrap inside the menu (Req 8.12, 12.12) @nav-live
+[393/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:320:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 1024x768 ΓÇ║ Escape closes and returns focus to the trigger (Req 8.6) @nav-live
+[394/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:326:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 1024x768 ΓÇ║ close control closes within 280 ms and returns focus (Req 8.7, 8.10) @nav-live
+[395/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:357:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 1024x768 ΓÇ║ a live Nav_Item closes, returns focus and navigates (Req 8.7) @nav-live
+[396/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:364:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 1024x768 ΓÇ║ a live in-page Nav_Item closes the menu and follows its anchor (Req 8.7) @nav-live
+[397/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:371:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 1024x768 ΓÇ║ the Primary_CTA closes, returns focus and keeps its destination (Req 8.7) @nav-live
+[398/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:385:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 1024x768 ΓÇ║ a planned item keeps the menu open and focus on itself (Req 8.14) @nav-live
+[399/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:405:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 1024x768 ΓÇ║ locks scroll with 0 px horizontal shift and restores the position (Req 8.5, 8.13) @nav-live
+[400/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:443:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ at 1024x768 ΓÇ║ crossing to 1280 closes instantly and focuses the Brand_Mark (Req 8.8) @nav-live
+[401/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:459:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ reduced motion at 390x844 (Req 8.9, 8.10) ΓÇ║ open and close use an opacity-only fade of at most 150 ms, with no stagger @nav-live
+[402/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:459:11 ΓÇ║ Mobile_Menu (fixture build) ΓÇ║ reduced motion at 1024x768 (Req 8.9, 8.10) ΓÇ║ open and close use an opacity-only fade of at most 150 ms, with no stagger @nav-live
+[403/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:531:11 ΓÇ║ No-JS disclosure (fixture build) ΓÇ║ at 320x568 (Req 17.4, 17.5) ΓÇ║ shows a 44├ù44 'Menu' summary in place of the hidden JS trigger @nav-live
+[404/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:542:11 ΓÇ║ No-JS disclosure (fixture build) ΓÇ║ at 320x568 (Req 17.4, 17.5) ΓÇ║ opens and closes by click @nav-live
+[405/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:552:11 ΓÇ║ No-JS disclosure (fixture build) ΓÇ║ at 320x568 (Req 17.4, 17.5) ΓÇ║ opens by Enter and Space, and every item is reachable by keyboard with no horizontal overflow @nav-live
+[406/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:531:11 ΓÇ║ No-JS disclosure (fixture build) ΓÇ║ at 390x844 (Req 17.4, 17.5) ΓÇ║ shows a 44├ù44 'Menu' summary in place of the hidden JS trigger @nav-live
+[407/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:542:11 ΓÇ║ No-JS disclosure (fixture build) ΓÇ║ at 390x844 (Req 17.4, 17.5) ΓÇ║ opens and closes by click @nav-live
+[408/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:552:11 ΓÇ║ No-JS disclosure (fixture build) ΓÇ║ at 390x844 (Req 17.4, 17.5) ΓÇ║ opens by Enter and Space, and every item is reachable by keyboard with no horizontal overflow @nav-live
+[409/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:531:11 ΓÇ║ No-JS disclosure (fixture build) ΓÇ║ at 1024x768 (Req 17.4, 17.5) ΓÇ║ shows a 44├ù44 'Menu' summary in place of the hidden JS trigger @nav-live
+[410/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:542:11 ΓÇ║ No-JS disclosure (fixture build) ΓÇ║ at 1024x768 (Req 17.4, 17.5) ΓÇ║ opens and closes by click @nav-live
+[411/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:552:11 ΓÇ║ No-JS disclosure (fixture build) ΓÇ║ at 1024x768 (Req 17.4, 17.5) ΓÇ║ opens by Enter and Space, and every item is reachable by keyboard with no horizontal overflow @nav-live
+[412/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:589:11 ΓÇ║ Hydration swap (fixture build) ΓÇ║ at 390x844 (Req 17.6) ΓÇ║ the trigger replaces an open, focused disclosure in place with CLS 0 and takes focus @nav-live
+[413/415] [chromium-nav-live] ΓÇ║ tests\e2e\mobile-menu.spec.ts:589:11 ΓÇ║ Hydration swap (fixture build) ΓÇ║ at 1024x768 (Req 17.6) ΓÇ║ the trigger replaces an open, focused disclosure in place with CLS 0 and takes focus @nav-live
+[414/415] [chromium-nav-live] ΓÇ║ tests\e2e\reduced-motion.spec.ts:479:11 ΓÇ║ Mobile_Menu under reduce (fixture build) ΓÇ║ at 390x844 (Req 8.9, 8.10) ΓÇ║ panel and backdrop fade opacity-only Γëñ 150 ms, no item stagger, link overlays Γëñ 150 ms @nav-live
+[415/415] [chromium-nav-live] ΓÇ║ tests\e2e\reduced-motion.spec.ts:479:11 ΓÇ║ Mobile_Menu under reduce (fixture build) ΓÇ║ at 1024x768 (Req 8.9, 8.10) ΓÇ║ panel and backdrop fade opacity-only Γëñ 150 ms, no item stagger, link overlays Γëñ 150 ms @nav-live
+  1 skipped
+  414 passed (6.3m)
